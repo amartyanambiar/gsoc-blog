@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/post-with-code/index.html</loc>
-    <lastmod>2023-06-01T16:24:52.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/welcome/index.html</loc>
-    <lastmod>2023-06-01T16:24:53.159Z</lastmod>
-  </url>
-  <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/index.html</loc>
-    <lastmod>2023-06-01T16:24:53.780Z</lastmod>
+    <lastmod>2023-06-01T16:54:45.262Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/about.html</loc>
-    <lastmod>2023-06-01T16:24:54.172Z</lastmod>
+    <lastmod>2023-06-01T16:54:45.763Z</lastmod>
   </url>
 </urlset>
