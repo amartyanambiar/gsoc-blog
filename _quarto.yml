@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "GSoC - 2023 : The MGnify Project"
+  navbar:
+    right:
+      - about.qmd
+      - icon: globe
+        href: https://amartya.vercel.app/
+      - icon: github
+        href: https://github.com/amartyanambiar
+      - icon: linkedin
+        href: https://www.linkedin.com/in/amartya-nambiar1/
+format:
+  html:
+    theme: zephyr
+    css: styles.css
