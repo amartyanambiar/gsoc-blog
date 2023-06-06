@@ -1,5 +1,5 @@
 ---
-title: "It's Happening!!!"
+title: "Amartya's GSoC Journal"
 listing:
   contents: posts
   sort: "date desc"

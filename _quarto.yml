@@ -11,6 +11,7 @@ website:
         href: https://github.com/amartyanambiar
       - icon: linkedin
         href: https://www.linkedin.com/in/amartya-nambiar1/
+  favicon: logo.png
 format:
   html:
     theme: zephyr
