@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "posts/Project Details/index.html",
-    "href": "posts/Project Details/index.html",
-    "title": "Project Details",
+    "objectID": "posts/The Project/index.html",
+    "href": "posts/The Project/index.html",
+    "title": "The Project",
     "section": "",
     "text": "Interactive Visualization for Comparative Metagenomics in MGnify\n\nMentors : Martin Beracochea, Sandy Rogers\nThe project aims to improve the visualisation tools for metagenomics data in the MGnify platform by identifying and using new technologies that can be used both on the website and in Jupyter notebooks. The goal is to enable researchers to easily compare taxonomic information from multiple studies for better interpretation and analysis of metagenomics data. Additionally, the project aims to streamline the process of user community contribution to MGnify Notebooks for improved accessibility and user experience. The project will be approached in three phases: research and evaluation of visualisation technologies, development of a Jupyter/observable notebook for comparing and visualising data from two studies, and integration of a JupyterLab extension to streamline the contribution process. The deliverables include a report on suitable visualisation technologies, a fully-functional Jupyter/Observable Notebook, and an integrated extension for user contributions. As a stretch goal, a component for the MGnify website that allows users to select multiple studies and launch a notebook for cross-study analyses will be developed."
+  },
+  {
+    "objectID": "keywords.html",
+    "href": "keywords.html",
+    "title": "Keywords",
+    "section": "",
+    "text": "Biome\n\nBiogeographical unit consisting of a biological community.\nOcean, Soil, etc.\n\n\n\nGenome\n\nComplete genetic material of an organism.\nMade up of DNA.\nExample : Human Genome consists of 3 billion nucleotides (23 pairs of chromosomes)\n\n\n\nMetagenome"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Amartya’s GSoC Journal",
     "section": "",
-    "text": "Project Details\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
+    "text": "The Project\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
   }
 ]
