@@ -1,0 +1,14 @@
+---
+title: "Project Details"
+author: "Amartya Nambiar"
+date: "2023-05-29"
+categories: []
+---
+<div style="text-align:center">
+![](thumbnail.jpeg)
+</div>
+
+## Interactive Visualization for Comparative Metagenomics in MGnify
+### **Mentors** : Martin Beracochea, Sandy Rogers\n
+The project aims to improve the visualisation tools for metagenomics data in the MGnify platform by identifying and using new technologies that can be used both on the website and in Jupyter notebooks. The goal is to enable researchers to easily compare taxonomic information from multiple studies for better interpretation and analysis of metagenomics data. Additionally, the project aims to streamline the process of user community contribution to MGnify Notebooks for improved accessibility and user experience. The project will be approached in three phases: research and evaluation of visualisation technologies, development of a Jupyter/observable notebook for comparing and visualising data from two studies, and integration of a JupyterLab extension to streamline the contribution process. The deliverables include a report on suitable visualisation technologies, a fully-functional Jupyter/Observable Notebook, and an integrated extension for user contributions. As a stretch goal, a component for the MGnify website that allows users to select multiple studies and launch a notebook for cross-study analyses will be developed.
+
