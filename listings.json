@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/keywords.html",
       "/posts/The Project/index.html"
     ]
   }
