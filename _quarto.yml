@@ -5,7 +5,6 @@ website:
   title: "GSoC - 2023 : The MGnify Project"
   navbar:
     right:
-      - about.qmd
       - icon: globe
         href: https://amartya.vercel.app/
       - icon: github
