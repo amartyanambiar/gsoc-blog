@@ -7,18 +7,11 @@
     "text": "Amplicon\n\nDNA or RNA molecule that is amplified or copied through a laboratory technique called polymerase chain reaction (PCR) or ligase chain reaction (LCR).\nOutput of Amplification process.\nAmplification -&gt; Larger number of copies of a specific DNA sequence.\n\n\n\nBiome\n\nBiogeographical unit consisting of a biological community.\nOcean, Soil, etc.\n\n\n\nDNA\n\nDeoxyriboNucleic Acid.\nDouble-stranded molecule that contains the genetic code.\n\n\n\nENA\n\nEuropean Nucleotide Archive\nA global database of DNA and RNA sequences.\nData from ENA is used in MGnify.\n\n\n\nGenome\n\nComplete genetic material of an organism.\nMade up of DNA.\nExample : Human Genome consists of 3 billion nucleotides (23 pairs of chromosomes)\n\n\n\nMetagenome\n\nMetagenome is the genetic material recovered directly from environmental or clinical samples by a method called sequencing.\nMetagenomics is the study of the structure and function of these nucleotide sequences.\n\n\n\nMetagenome Assembled Genome (MAG)\n\nA metagenome assembled genome is a genome reconstructed from metagenomic data.\n1 partial or complete genome\n1 MAG = 1 species\n\n\n\nMGnify\n\nThe MGnify platform facilitates the assembly, analysis and archiving of microbiome-derived nucleicacid sequences.\nHub for the analysis and exploration of metagenomic, metatranscriptomic, amplicon and assembly data.\nEMBL’s European Bioinformatics Institute 🙌"
   },
   {
-    "objectID": "posts/viz_recon.html",
-    "href": "posts/viz_recon.html",
-    "title": "MGnify Visualisation Recon",
-    "section": "",
-    "text": "Example URL: https://www.ebi.ac.uk/metagenomics/studies/MGYS00001606#overview\nWhat it shows: Location of the samples collected\nDataset: Sample metadata (from ENA)\nVisualisation type: Geographical Map\nTechnology used: Google Maps embed"
-  },
-  {
     "objectID": "posts/viz_recon.html#map-of-sample-locations",
     "href": "posts/viz_recon.html#map-of-sample-locations",
     "title": "MGnify Visualisation Recon",
-    "section": "",
-    "text": "Example URL: https://www.ebi.ac.uk/metagenomics/studies/MGYS00001606#overview\nWhat it shows: Location of the samples collected\nDataset: Sample metadata (from ENA)\nVisualisation type: Geographical Map\nTechnology used: Google Maps embed"
+    "section": "Map of sample locations",
+    "text": "Map of sample locations\nExample URL: https://www.ebi.ac.uk/metagenomics/studies/MGYS00001606#overview\nWhat it shows: Location of the samples collected\nDataset: Sample metadata (from ENA)\nVisualisation type: Geographical Map\nTechnology used: Google Maps embed"
   },
   {
     "objectID": "posts/viz_recon.html#quality-control",
@@ -63,25 +56,18 @@
     "text": "Kegg pathway visualisation\nExample URL: https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb (not yet live)\nWhat it shows: completeness of KEGG pathways for a sample\nDataset: combination of an MGYA Kegg Module list and a Pathway from KEGG API\nVisualisation type: pathway network\nTechnology used: pathviz R package"
   },
   {
+    "objectID": "The Project/me.html",
+    "href": "The Project/me.html",
+    "title": "Me",
+    "section": "",
+    "text": "Amartya Nambiar\n\nGSoC - 2023 Contributor\n\n\n\n\nSocial Links : https://amartya.vercel.app/"
+  },
+  {
     "objectID": "The Project/mentors.html",
     "href": "The Project/mentors.html",
     "title": "The Mentors",
     "section": "",
-    "text": "EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.\nThey are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states."
-  },
-  {
-    "objectID": "The Project/mentors.html#martin-beracochea",
-    "href": "The Project/mentors.html#martin-beracochea",
-    "title": "The Mentors",
-    "section": "Martin Beracochea",
-    "text": "Martin Beracochea"
-  },
-  {
-    "objectID": "The Project/mentors.html#sandy-rogers",
-    "href": "The Project/mentors.html#sandy-rogers",
-    "title": "The Mentors",
-    "section": "Sandy Rogers",
-    "text": "Sandy Rogers"
+    "text": "EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.\nThey are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states.\n\n\nMartin Beracochea\n\nMGnify Production Project Leader\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/martin-beracochea/\n\n\n\n\n\n\n\n\n\n\n\n\nSandy Rogers\n\nMGnify Website Full Stack Developer\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/martin-beracochea/"
   },
   {
     "objectID": "The Project/project.html",
@@ -95,6 +81,6 @@
     "href": "index.html",
     "title": "Amartya’s GSoC Journal",
     "section": "",
-    "text": "MGnify Visualisation Recon\n\n\n\n\n\n\n\n\n\n\nCondensed list of visualisations used in MGnify\n\n\n\n\n\n\nJun 12, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nThe Project\n\n\n\n\n\n\n\n\n\n\nThrilled to announce that I have been accepted as a GSoC Contributor for the year of 2023 at EBI (European Bioinformatics Institute). I am delighted to share the details of my project.\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
+    "text": "MGnify Visualisation Recon\n\n\n\n\n\n\n\n\n\n\nCondensed list of visualisations used in MGnify\n\n\n\n\n\n\nJun 12, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nThe Project\n\n\n\n\n\n\n\nAbout\n\n\n\n\nThrilled to announce that I have been accepted as a GSoC Contributor for the year of 2023 at EBI (European Bioinformatics Institute). I am delighted to share the details of my project.\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
   }
 ]
