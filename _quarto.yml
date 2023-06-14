@@ -19,8 +19,9 @@ website:
     style: "docked"
     search: true
     contents:
-      - section: "**Posts**"
-        contents: posts/*
+      - section: "**Highlights**"
+        contents:
+          - posts/viz_recon.qmd
 
       - section: "**About**"
         contents:
