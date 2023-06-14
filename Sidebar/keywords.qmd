@@ -1,0 +1,49 @@
+---
+title: "Keywords"
+author: "Amartya Nambiar"
+categories: ["Info"]
+description: "Dictionary of terms used in MGnify and throughout my Blog."
+tags: ["MGnify", "Bioinformatics", "Metagenomics"]
+title-block-banner: true
+---
+
+### Amplicon 
+- DNA or RNA molecule that is amplified or copied through a laboratory technique called polymerase chain reaction (PCR) or ligase chain reaction (LCR).
+- Output of Amplification process.
+- Amplification -> Larger number of copies of a specific DNA sequence.
+
+### Biome 
+- Biogeographical unit consisting of a biological community.
+- *Ocean, Soil, etc.* 
+
+### DNA
+- **D**eoxyribo**N**ucleic **A**cid.
+- Double-stranded molecule that contains the genetic code.
+
+### ENA
+- [European Nucleotide Archive](https://www.ebi.ac.uk/ena/browser/home)
+- A global database of DNA and RNA sequences.
+- Data from ENA is used in MGnify.
+
+### Genome
+- Complete genetic material of an organism.
+- Made up of [DNA](#DNA).
+- *Example : Human Genome consists of 3 billion nucleotides (23 pairs of chromosomes)*
+
+### Metagenome
+- Metagenome is the genetic material recovered directly from environmental or clinical samples by a method called sequencing. 
+- Metagenomics is the study of the structure and function of these nucleotide sequences.
+
+### Metagenome Assembled Genome (MAG)
+- A metagenome assembled genome is a genome reconstructed from metagenomic data. 
+- 1 partial or complete genome
+- **1 MAG** = **1 species**
+
+### MGnify
+- The [MGnify platform](https://www.ebi.ac.uk/metagenomics/) facilitates the assembly, analysis and
+archiving of microbiome-derived nucleicacid sequences.
+- Hub for the analysis and exploration of metagenomic, metatranscriptomic, amplicon and assembly data.
+- [EMBL's European Bioinformatics Institute](https://www.ebi.ac.uk/) 🙌
+
+
+

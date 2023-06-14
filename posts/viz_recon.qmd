@@ -1,0 +1,179 @@
+---
+title: "MGnify Visualisation Recon"
+author: "Amartya Nambiar"
+date: "2023-06-12"
+categories: []
+description:  "Condensed list of visualisations used in MGnify"
+title-block-banner: true
+---
+
+![](mgnify.png)
+
+# Sample Viz
+## Map of sample locations
+
+**Example URL:**
+[[https://www.ebi.ac.uk/metagenomics/studies/MGYS00001606#overview]{.underline}](https://www.ebi.ac.uk/metagenomics/studies/MGYS00001606#overview)
+
+**What it shows:** Location of the samples collected
+
+**Dataset:** Sample metadata (from ENA)
+
+**Visualisation type:** Geographical Map
+
+**Technology used:** Google Maps embed
+
+
+
+# Analysis Viz
+
+## Quality Control
+
+**Example URL:**
+[[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#qc]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#qc)
+
+**Technology used:** Highcharts
+
+**Dataset:** Accessed through Analyses Accession ID - Summary
+
+#### Number of Sequence Reads per QC step 
+
+**What it shows:** Number of reads which pass the quality control steps
+in the pipeline.
+
+**Visualisation type:** Normal X-axis Charts
+
+#### Read Length & Read GC Distribution
+
+**What it shows:** Histograms showing distributions of sequence lengths
+and percentage GC content for the sequences having passed quality
+control.
+
+**Visualisation type:** Histogram
+
+#### Nucleotide Position Histogram
+
+**What it shows:** Shows the relative abundance of nucleotides (A, C, G,
+T, or ambiguous base \"N\") at each position starting from the beginning
+of each read up to the first 500 base pairs.
+
+**Visualisation type:** Histogram
+
+**Dataset:** Accessed through Analyses Accession ID -
+nucleotide-distribution
+
+## Taxonomic analysis
+
+Results from the taxonomic analysis steps of the pipeline.
+
+**Example URL:**
+[[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic)
+
+#### Krona
+
+**What it shows:** Interactive Krona to visualise the taxa hierarchy
+
+**Technology used:**
+[[https://github.com/marbl/Krona/wiki]{.underline}](https://github.com/marbl/Krona/wiki)
+
+**Visualisation type:** Krona
+
+**Dataset:** Accessed through Analyses Accession ID -
+krona\${taxResults}
+
+#### Domain Composition
+
+**Technology used:** Highcharts
+
+**Visualisation type:** Pie, Column
+
+**Dataset:** Accessed through Analysis Accession ID - taxonomy
+
+#### Phylum Composition
+
+**Technology used:** Highcharts
+
+**Visualisation type:** Pie, Column, Stacked Column
+
+**Dataset:** Accessed through Analysis Accession ID - taxonomy
+
+## Functional analysis
+
+Charts present the functional analysis outputs of the pipeline, which
+focus on InterPro, Pfam, KEGG orthologue and GO term annotations. These
+summarise the functional content of the sequences in the sample.
+
+**Example URL:**
+[[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional)
+
+#### InterPro
+
+**What it shows:** Shows Sequence feature summary & InterPro Summary
+
+**Technology used:** Highcharts
+
+**Visualisation type:** X-axis Chart, Pie
+
+#### GO Terms
+
+**What it shows:** A summary of Gene Ontology (GO) terms derived from
+InterPro matches to the sample is provided in the charts below.
+
+**Technology used:** Highcharts
+
+**Visualisation type:** Bar, Pie
+
+#### Pfam
+
+**What it shows:** Top 10 Pfam entries
+
+**Technology used:** Highcharts
+
+**Visualisation type:** Bar
+
+#### KO
+
+**What it shows:** Top 10 KO entries
+
+**Technology used:** Highcharts
+
+**Visualisation type:** Bar
+
+## Contig Viewer
+
+**Example URL:**
+[[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00643204?selected_contig=ERZ12633542.2-NODE-96-length-2072-cov-5.941001#contigs-viewer]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00643204?selected_contig=ERZ12633542.2-NODE-96-length-2072-cov-5.941001#contigs-viewer)
+
+**What it shows:** Contig browser for the assembly contigs
+
+**Dataset:** through assembly ID, FASTA URL
+
+**Visualisation type:** Contig viewer
+
+**Technology used:** IGV
+
+## Pathways/Systems
+
+Results from the biochemical pathways and systems predictions steps of
+the pipeline.
+
+#### KEGG Module
+
+#### Genome properties
+
+#### antiSMASH
+
+## Kegg pathway visualisation
+
+**Example URL:**
+[[https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb]{.underline}](https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb)
+(not yet live)
+
+**What it shows:** completeness of KEGG pathways for a sample
+
+**Dataset:** combination of an MGYA Kegg Module list and a Pathway from
+KEGG API
+
+**Visualisation type:** pathway network
+
+**Technology used:** pathviz R package

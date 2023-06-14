@@ -1,0 +1,32 @@
+---
+title: "The Mentors"
+author: "Amartya Nambiar"
+categories: []
+description:  "&nbsp;&nbsp;Pillars of Support 🙏"
+title-block-banner: true
+---
+
+EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.
+
+They are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states.
+
+----
+
+# Martin Beracochea 
+<h4>MGnify Production Project Leader</h4>
+EBI Portfolio : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/martin-beracochea/)
+<div style="text-align:right">
+![](martin.jpeg)
+</div>
+
+
+
+----
+
+# Sandy Rogers
+<h4>MGnify Website Full Stack Developer</h4>
+EBI Portfolio : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/sandy-alexander-rogers/)
+<div style="text-align:right">
+![](sandy.jpeg)
+</div>
+

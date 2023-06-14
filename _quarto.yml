@@ -2,19 +2,45 @@ project:
   type: website
 
 website:
-  title: "GSoC - 2023 : The MGnify Project"
+  title: "GSoC - 23 : The MGnify Project"
+
   navbar:
     right:
-      - icon: bi-lightbulb-fill
-        href: keywords.qmd
+      # - icon: info-circle-fill
+      #   href: /posts/keywords.html
       - icon: globe
         href: https://amartya.vercel.app/
       - icon: github
         href: https://github.com/amartyanambiar
       - icon: linkedin
         href: https://www.linkedin.com/in/amartya-nambiar1/
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Posts"
+        contents: posts/*
+
+      - section: "About"
+        contents:
+          - The Project/project.qmd
+          - The Project/mentors.qmd
+          - The Project/me.qmd
+
+      - Sidebar/keywords.qmd
+
   favicon: logo.png
 format:
   html:
     theme: zephyr
     css: styles.css
+    toc: true
+    toc-title: "Table of Contents"
+    toc-depth: 5
+    toc-exapnded: true
+    page-layout: full
+    # grid:
+    #   body-width: 1000px
+    #   sidebar-width: 10px
+    #   margin-width: 250px
