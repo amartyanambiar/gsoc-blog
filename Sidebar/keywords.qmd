@@ -1,5 +1,5 @@
 ---
-title: "Keywords"
+title: "**Keywords**"
 author: "Amartya Nambiar"
 categories: ["Info"]
 description: "Dictionary of terms used in MGnify and throughout my Blog."
@@ -44,6 +44,7 @@ title-block-banner: true
 archiving of microbiome-derived nucleicacid sequences.
 - Hub for the analysis and exploration of metagenomic, metatranscriptomic, amplicon and assembly data.
 - [EMBL's European Bioinformatics Institute](https://www.ebi.ac.uk/) 🙌
+
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Me"
 author: "Amartya Nambiar"
-categories: []
+categories: ["About"]
 description:  ""
 title-block-banner: true
 ---
@@ -9,8 +9,12 @@ title-block-banner: true
 # Amartya Nambiar
 
 <h4>GSoC - 2023 Contributor</h4>
-Social Links : [https://amartya.vercel.app/](https://amartya.vercel.app/)
-<div style="text-align:right;">
+
+::: {layout-ncol=3}
+**Social Links :** [https://amartya.vercel.app/](https://amartya.vercel.app/)
+
+[]()
+
 ![](my_pic.png){width=25%}
-</div>
+:::
 

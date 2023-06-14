@@ -2,7 +2,7 @@
 title: "The Project"
 author: "Amartya Nambiar"
 date: "2023-05-29"
-categories: []
+categories: ["About"]
 description:  "Thrilled to announce that I have been accepted as a GSoC Contributor for the year of 2023 at EBI (European Bioinformatics Institute). I am delighted to share the details of my project."
 title-block-banner: true
 ---

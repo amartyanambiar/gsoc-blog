@@ -1,7 +1,7 @@
 ---
 title: "The Mentors"
 author: "Amartya Nambiar"
-categories: []
+categories: ["About"]
 description:  "&nbsp;&nbsp;Pillars of Support 🙏"
 title-block-banner: true
 ---
@@ -14,10 +14,16 @@ They are part of the European Molecular Biology Laboratory (EMBL), an intergover
 
 # Martin Beracochea 
 <h4>MGnify Production Project Leader</h4>
-EBI Portfolio : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/martin-beracochea/)
-<div style="text-align:right">
+
+::: {layout-ncol=3}
+**EBI Portfolio** : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/sandy-alexander-rogers/)
+
+
+
+[]()
+
 ![](martin.jpeg)
-</div>
+:::
 
 
 
@@ -25,8 +31,12 @@ EBI Portfolio : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https:/
 
 # Sandy Rogers
 <h4>MGnify Website Full Stack Developer</h4>
-EBI Portfolio : [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/sandy-alexander-rogers/)
-<div style="text-align:right">
-![](sandy.jpeg)
-</div>
 
+::: {layout-ncol=3}
+**EBI Portfolio :** [https://www.ebi.ac.uk/people/person/martin-beracochea/](https://www.ebi.ac.uk/people/person/sandy-alexander-rogers/)
+
+[]()
+
+![](sandy.jpeg)
+:::
+----

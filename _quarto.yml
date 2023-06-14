@@ -19,10 +19,10 @@ website:
     style: "docked"
     search: true
     contents:
-      - section: "Posts"
+      - section: "**Posts**"
         contents: posts/*
 
-      - section: "About"
+      - section: "**About**"
         contents:
           - The Project/project.qmd
           - The Project/mentors.qmd
