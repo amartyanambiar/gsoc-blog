@@ -7,6 +7,13 @@
     "text": "Amplicon\n\nDNA or RNA molecule that is amplified or copied through a laboratory technique called polymerase chain reaction (PCR) or ligase chain reaction (LCR).\nOutput of Amplification process.\nAmplification -&gt; Larger number of copies of a specific DNA sequence.\n\n\n\nBiome\n\nBiogeographical unit consisting of a biological community.\nOcean, Soil, etc.\n\n\n\nDNA\n\nDeoxyriboNucleic Acid.\nDouble-stranded molecule that contains the genetic code.\n\n\n\nENA\n\nEuropean Nucleotide Archive\nA global database of DNA and RNA sequences.\nData from ENA is used in MGnify.\n\n\n\nGenome\n\nComplete genetic material of an organism.\nMade up of DNA.\nExample : Human Genome consists of 3 billion nucleotides (23 pairs of chromosomes)\n\n\n\nMetagenome\n\nMetagenome is the genetic material recovered directly from environmental or clinical samples by a method called sequencing.\nMetagenomics is the study of the structure and function of these nucleotide sequences.\n\n\n\nMetagenome Assembled Genome (MAG)\n\nA metagenome assembled genome is a genome reconstructed from metagenomic data.\n1 partial or complete genome\n1 MAG = 1 species\n\n\n\nMGnify\n\nThe MGnify platform facilitates the assembly, analysis and archiving of microbiome-derived nucleicacid sequences.\nHub for the analysis and exploration of metagenomic, metatranscriptomic, amplicon and assembly data.\nEMBL’s European Bioinformatics Institute 🙌"
   },
   {
+    "objectID": "Sidebar/commands.html",
+    "href": "Sidebar/commands.html",
+    "title": "Saviour Commands",
+    "section": "",
+    "text": "Get The Jupyter Lab Server Up and Running\n\n\n\n\n\n\nFor  pathways_vis  Branch\n\n\n\ndocker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \\\nquay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis"
+  },
+  {
     "objectID": "posts/Viz_Recon/index.html#map-of-sample-locations",
     "href": "posts/Viz_Recon/index.html#map-of-sample-locations",
     "title": "MGnify Visualisation Recon",
