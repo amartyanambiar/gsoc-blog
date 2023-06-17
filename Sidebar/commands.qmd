@@ -1,0 +1,22 @@
+---
+title: "**Saviour Commands**"
+author: "Amartya Nambiar"
+categories: []
+description: "&nbsp;Noting down some Important Commands for future reference"
+tags: ["docker","jupyter-lab"]
+title-block-banner: true
+---
+
+#### Get The Jupyter Lab Server Up and Running
+
+::: {.callout-note icon=false}
+
+## For &nbsp;<mark style="background-color: yellow">pathways_vis</mark>&nbsp;  Branch
+
+```bash 
+docker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \
+quay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis
+```
+
+:::
+

@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>GSoC - 23 : The MGnify Project - Introduction </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">GSoC - 23 : The MGnify Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://amartya.vercel.app/" rel="" target=""><i class="bi bi-globe" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/amartyanambiar" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/amartya-nambiar1/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction <a id="intro"></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Introduction <a id="intro"></a></h1><a id="intro">
+                      </a></div><a id="intro">
+  </a></div><a id="intro">
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </a></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>Highlights</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Viz_Recon/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MGnify Visualisation Recon</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>About</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../The Project/project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../The Project/mentors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Mentors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../The Project/me.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Me</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Sidebar/keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Keywords</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Sidebar/commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Saviour Commands</strong></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><a id="intro">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  </a><ul><a id="intro" class="nav-link active" data-scroll-target="undefined">
+  </a><li><a id="intro" class="nav-link" data-scroll-target="undefined"></a><a href="#minimal-example-1.-fetching-kegg-orthologs-and-modules-tables-from-mgnify" id="toc-minimal-example-1.-fetching-kegg-orthologs-and-modules-tables-from-mgnify" class="nav-link" data-scroll-target="#minimal-example-1.-fetching-kegg-orthologs-and-modules-tables-from-mgnify">Minimal example 1. Fetching kegg orthologs and modules tables from MGnify </a><a id="mgnifyr" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#minimal-example-2.-get-pathways-relating-info-from-keggrest-api" id="toc-minimal-example-2.-get-pathways-relating-info-from-keggrest-api" class="nav-link" data-scroll-target="#minimal-example-2.-get-pathways-relating-info-from-keggrest-api">Minimal example 2. Get pathways relating info from KEGGREST API </a><a id="keggrest" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#part-1.-drawing-presenceabsence-kos-for-one-metagenomic-sample" id="toc-part-1.-drawing-presenceabsence-kos-for-one-metagenomic-sample" class="nav-link" data-scroll-target="#part-1.-drawing-presenceabsence-kos-for-one-metagenomic-sample">Part 1. Drawing presence/absence KOs for one metagenomic sample </a><a id="part1" class="nav-link" data-scroll-target="undefined"></a>
+  <ul>
+  <li><a href="#fetching-data-from-mgnify" id="toc-fetching-data-from-mgnify" class="nav-link" data-scroll-target="#fetching-data-from-mgnify">1.1. Fetching data from MGnify </a><a id="part1_1" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#selecting-the-most-complete-pathways" id="toc-selecting-the-most-complete-pathways" class="nav-link" data-scroll-target="#selecting-the-most-complete-pathways">1.2. Selecting the most complete pathways </a><a id="part1_2" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#ready-to-draw" id="toc-ready-to-draw" class="nav-link" data-scroll-target="#ready-to-draw">1.3. Ready to draw! </a><a id="part1_3" class="nav-link" data-scroll-target="undefined"></a></li>
+  </ul></li>
+  <li><a href="#part-2.-comparing-groups-of-samples-drawing-kos-abundance" id="toc-part-2.-comparing-groups-of-samples-drawing-kos-abundance" class="nav-link" data-scroll-target="#part-2.-comparing-groups-of-samples-drawing-kos-abundance">Part 2. Comparing groups of samples, drawing KOs abundance </a><a id="part2" class="nav-link" data-scroll-target="undefined"></a>
+  <ul>
+  <li><a href="#fetching-ko-tables-from-mgnify" id="toc-fetching-ko-tables-from-mgnify" class="nav-link" data-scroll-target="#fetching-ko-tables-from-mgnify">2.1. Fetching KO tables from MGnify </a><a id="part2_1" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#generating-differentially-abundance-count-tables" id="toc-generating-differentially-abundance-count-tables" class="nav-link" data-scroll-target="#generating-differentially-abundance-count-tables">2.1. Generating differentially abundance count tables</a><a id="part2_2" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#selecting-the-pathways-templates-to-draw" id="toc-selecting-the-pathways-templates-to-draw" class="nav-link" data-scroll-target="#selecting-the-pathways-templates-to-draw">2.3. Selecting the pathways templates to draw</a><a id="part2_3" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#plotting-pathways" id="toc-plotting-pathways" class="nav-link" data-scroll-target="#plotting-pathways">2.4. Plotting pathways</a><a id="part2_4" class="nav-link" data-scroll-target="undefined"></a></li>
+  </ul></li>
+  <li><a href="#part-3.-plotting-presenceabsence-of-kos-and-metabolites-for-one-metagenomic-sample" id="toc-part-3.-plotting-presenceabsence-of-kos-and-metabolites-for-one-metagenomic-sample" class="nav-link" data-scroll-target="#part-3.-plotting-presenceabsence-of-kos-and-metabolites-for-one-metagenomic-sample">Part 3. Plotting presence/absence of KOs and metabolites for one metagenomic sample </a><a id="part3" class="nav-link" data-scroll-target="undefined"></a>
+  <ul>
+  <li><a href="#extracting-kos-from-input-tables" id="toc-extracting-kos-from-input-tables" class="nav-link" data-scroll-target="#extracting-kos-from-input-tables">3.1. Extracting KOs from input tables </a><a id="part3_1" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#loading-and-formatting-metabolites-data" id="toc-loading-and-formatting-metabolites-data" class="nav-link" data-scroll-target="#loading-and-formatting-metabolites-data">3.2. Loading and formatting metabolites data </a><a id="part3_2" class="nav-link" data-scroll-target="undefined"></a></li>
+  <li><a href="#drawing" id="toc-drawing" class="nav-link" data-scroll-target="#drawing">3.3. Drawing! </a><a id="part3_3" class="nav-link" data-scroll-target="undefined"></a>
+  <ul>
+  <li><a href="#datasets-and-databases-papers" id="toc-datasets-and-databases-papers" class="nav-link" data-scroll-target="#datasets-and-databases-papers">Datasets and databases papers:</a></li>
+  <li><a href="#r-libraries" id="toc-r-libraries" class="nav-link" data-scroll-target="#r-libraries">R libraries:</a></li>
+  <li><a href="#going-deeper" id="toc-going-deeper" class="nav-link" data-scroll-target="#going-deeper">Going deeper:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+
+
+<a id="intro">
+</a>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Pathway Visualisation"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Pathways Visualization"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Alejandra Escobar (MGnify team)"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>categories<span class="sc">:</span> [R]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>execute<span class="sc">:</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  enabled<span class="sc">:</span> false</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading libraries:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ALDEx2)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(IRdisplay)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(KEGGREST)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MGnifyR)   </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pathview)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyjson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up functions</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>collect_pathways <span class="ot">&lt;-</span> <span class="cf">function</span>(ids_list) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    pathways <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (id <span class="cf">in</span> ids_list) { </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        current_pathway <span class="ot">=</span> <span class="fu">as.list</span>(<span class="fu">keggLink</span>(<span class="st">"pathway"</span>, id))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (index <span class="cf">in</span> <span class="fu">grep</span>(<span class="st">"map"</span>, current_pathway)) {        </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            clean_id <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"*path:"</span>, <span class="st">""</span>, current_pathway[index])</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Discarding chemical structure (map010XX), global (map011XX), and overview (map012XX) maps</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            prefix <span class="ot">=</span> <span class="fu">substring</span>(clean_id, <span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span>(<span class="fu">is.na</span>(<span class="fu">match</span>(<span class="st">"map010"</span>, prefix)) <span class="sc">&amp;</span> <span class="fu">is.na</span>(<span class="fu">match</span>(<span class="st">"map011"</span>, prefix)) <span class="sc">&amp;</span> <span class="fu">is.na</span>(<span class="fu">match</span>(<span class="st">"map012"</span>, prefix)) ){</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                pathways <span class="ot">=</span> <span class="fu">append</span>(pathways, clean_id)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pathways)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create your session mgnify_client object</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mg <span class="ot">=</span> <span class="fu">mgnify_client</span>(<span class="at">usecache =</span> T, <span class="at">cache_dir =</span> <span class="st">'/home/jovyan/.mgnify_cache'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The goal of this notebook is to demonstrate how to create KEGG pathway maps to visualize metabolic potential and metabolite production in metagenomic samples. We will use metabolic pathways annotated at the gene level by assigning a KEGG Orthology (KO) to putative protein sequences. These results are generated through the <a href="https://doi.org/10.1093/nar/gkac1080">MGnify v5.0 pipeline</a> for metagenomic assemblies, as shown in the workflow schema below. We will also use the completeness estimation of KEGG modules available in the <a href="https://www.ebi.ac.uk/metagenomics">MGnify web portal</a>. Consider that modules completeness is determined by the number of essential steps present; therefore, even if 100% completeness is achieved, there can still be gaps.</p>
+<p>The <a href="https://www.genome.jp/kegg/">KEGG (Kyoto Encyclopedia of Genes and Genomes) database</a> is a collection of biologically-oriented data, including genetic and metabolic pathways, diseases and drugs, protein-protein interactions, and gene expression. We use the KEGG database to make connections between genes and biological information and provides pathways as a resource for systems biology.</p>
+<p>KEGG Modules are clusters of related genes that are involved in a specific biological process or pathway. KEGG modules IDs starts with ‘M’ followed by 5 numbers. Pathways are sets of interconnected biochemical reactions that form a chain leading from an initial reactant to a final product. The IDs of manually drawn reference pathway starts with the word ‘map’ followed by 5 numbers. KEGG pathways provide a high-level overview of the major metabolic pathways in an organism, while KEGG modules provide a more detailed view of the genes and reactions involved in a specific pathway. For a better display of results, in this notebook we are not using as templates chemical structure (map010XX), global (map011XX), and overview (map012XX) maps.</p>
+<p><img src="https://www.ebi.ac.uk/metagenomics/static/5e55649e459d5f26ee6c.png" width="800px"></p>
+<p>In the following sections of this introduction you will find a couple of simplest minimal examples on the main functions we will use to fetch and format the input tables for KEGG pathways visualization.</p>
+<section id="minimal-example-1.-fetching-kegg-orthologs-and-modules-tables-from-mgnify" class="level3">
+<h3 class="anchored" data-anchor-id="minimal-example-1.-fetching-kegg-orthologs-and-modules-tables-from-mgnify">Minimal example 1. Fetching kegg orthologs and modules tables from MGnify <a id="mgnifyr"></a></h3><a id="mgnifyr">
+<p><code>MgnifyR</code> has pre-built functions to retrieve data from MGnify databases. The <code>mgnify_retrieve_json</code> function can be used to access results that are not available in tabular format. In this notebook we will fetch the pathways annotation and pathways completeness tables generated by the latest version of the MGnify analysis pipeline in json format and reformat into dataframes to easily manipulate the data.</p>
+<ol type="1">
+<li>Example on how to fetch the KOs counts table for one sample having the analysis accession <code>MGYA00636312</code>:</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="5"><a id="mgnifyr">
+</a><div class="sourceCode cell-code" id="cb6"><a id="mgnifyr"></a><pre class="sourceCode r code-with-copy"><a id="mgnifyr"><code class="sourceCode r"><span id="cb6-1"></span></code></a><code class="sourceCode r"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ko_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> <span class="st">'analyses/MGYA00636312/kegg-orthologs'</span>)
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ko_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_json <span class="sc">%&gt;%</span> spread_all)[ , <span class="fu">c</span>(<span class="st">"attributes.accession"</span>, <span class="st">"attributes.count"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ko_data, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">attributes.accession</th>
+<th data-quarto-table-cell-role="th" scope="col">attributes.count</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">1</td>
+<td>K07497</td>
+<td>513</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">2</td>
+<td>K02015</td>
+<td>373</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">3</td>
+<td>K10822</td>
+<td>366</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="2" type="1">
+<li>And we can also fetch the modules completeness table for the same sample using the following code:</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ko_comp_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> <span class="st">'analyses/MGYA00636312/kegg-modules'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ko_comp <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_comp_json <span class="sc">%&gt;%</span> spread_all)[ , <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"attributes.completeness"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ko_comp, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 3 × 2</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">id</th>
+<th data-quarto-table-cell-role="th" scope="col">attributes.completeness</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">1</td>
+<td>M00001</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">2</td>
+<td>M00002</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">3</td>
+<td>M00003</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="minimal-example-2.-get-pathways-relating-info-from-keggrest-api" class="level3">
+<h3 class="anchored" data-anchor-id="minimal-example-2.-get-pathways-relating-info-from-keggrest-api">Minimal example 2. Get pathways relating info from KEGGREST API <a id="keggrest"></a></h3><a id="keggrest">
+</a><p><a id="keggrest"></a><a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html">KEGGREST</a> is a powerful tool with multiple functions to access and utilize data from KEGG databases. In this notebook we use <code>KEGGREST</code> to map between IDs in different databases and to determine the pathways associated with a module, orthologue, or compound. To display the list of KEGG databases we can query, you can run <code>listDatabases()</code> command.</p>
+<ol type="1">
+<li>Using <code>keggLink</code> function to find the ID of the pathways we can use as template to draw the module of methane production from CO2 (M00567)</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.list</span>(<span class="fu">keggLink</span>(<span class="st">"pathway"</span>, <span class="st">'M00567'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<dl>
+    <dt>$`md:M00567`</dt>
+        <dd>'path:map00680'</dd>
+    <dt>$`md:M00567`</dt>
+        <dd>'path:map01100'</dd>
+    <dt>$`md:M00567`</dt>
+        <dd>'path:map01120'</dd>
+    <dt>$`md:M00567`</dt>
+        <dd>'path:map01200'</dd>
+</dl>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Using <code>keggFind</code> to find all the KOs associated to the Methyl-coenzyme M reductase (EC 2.8.4.1)</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.list</span>(<span class="fu">keggFind</span>(<span class="st">"ko"</span>, <span class="st">'2.8.4.1'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<dl>
+    <dt>$`ko:K00399`</dt>
+        <dd>'mcrA; methyl-coenzyme M reductase alpha subunit [EC:2.8.4.1]'</dd>
+    <dt>$`ko:K00401`</dt>
+        <dd>'mcrB; methyl-coenzyme M reductase beta subunit [EC:2.8.4.1]'</dd>
+    <dt>$`ko:K00402`</dt>
+        <dd>'mcrG; methyl-coenzyme M reductase gamma subunit [EC:2.8.4.1]'</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="part-1.-drawing-presenceabsence-kos-for-one-metagenomic-sample" class="level2">
+<h2 class="anchored" data-anchor-id="part-1.-drawing-presenceabsence-kos-for-one-metagenomic-sample">Part 1. Drawing presence/absence KOs for one metagenomic sample <a id="part1"></a></h2><a id="part1">
+</a><p><a id="part1">For Parts 1 and 2 of this notebook, we will use MGnify results generated for two studies: 1. Metagenomes of bacteria colonizing the gut of Apis mellifera and Apis cerana from Japan (</a><a href="https://www.ebi.ac.uk/metagenomics/studies/MGYS00006180#overview">MGYS00006180</a>). 2. Gut microbiota of Switzerland honeybees (<a href="https://www.ebi.ac.uk/metagenomics/studies/MGYS00006178#overview">MGYS00006178</a>).</p>
+<p>The original analysis based on viral communities can be found in the <a href="https://doi.org/10.1073/pnas.2000228117">Bonilla-Rosso et al.,</a> publication.</p>
+<section id="fetching-data-from-mgnify" class="level3">
+<h3 class="anchored" data-anchor-id="fetching-data-from-mgnify">1.1. Fetching data from MGnify <a id="part1_1"></a></h3><a id="part1_1">
+<ol type="1">
+<li>Fetching the analysis accession list using the study accessions.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="29"><a id="part1_1">
+</a><div class="sourceCode cell-code" id="cb12"><a id="part1_1"></a><pre class="sourceCode r code-with-copy"><a id="part1_1"><code class="sourceCode r"><span id="cb12-1"></span></code></a><code class="sourceCode r"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>all_accessions <span class="ot">=</span> <span class="fu">mgnify_analyses_from_studies</span>(mg, <span class="fu">c</span>(<span class="st">'MGYS00006180'</span>,<span class="st">'MGYS00006178'</span>))
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>all_metadata <span class="ot">=</span> <span class="fu">mgnify_get_analyses_metadata</span>(mg, all_accessions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  |======================================================================| 100%
+  |======================================================================| 100%</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Keeping just the first analysis accession to fetch the kegg orthologs count table from the MGnify API and transform from JSON to matrix.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>accession <span class="ot">=</span> <span class="fu">head</span>(all_accessions, <span class="dv">1</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ko_loc <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">'analyses/'</span>,accession,<span class="st">'/kegg-orthologs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ko_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> ko_loc)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ko_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_json <span class="sc">%&gt;%</span> spread_all)[ , <span class="fu">c</span>(<span class="st">"attributes.accession"</span>, <span class="st">"attributes.count"</span>)]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ko_data <span class="ot">=</span> <span class="fu">data.frame</span>(ko_data, <span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(ko_data)[<span class="dv">1</span>] <span class="ot">=</span> <span class="st">'counts'</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>ko_matrix <span class="ot">=</span> <span class="fu">data.matrix</span>(ko_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ko_matrix, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A matrix: 3 × 1 of type dbl</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">K10822</td>
+<td>115</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th" scope="row">K02030</td>
+<td>91</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" scope="row">K02004</td>
+<td>79</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Fetch the modules completeness table and filter out completeness &lt; 100%.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>comp_loc <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">'analyses/'</span>,accession,<span class="st">'/kegg-modules'</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ko_comp_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> comp_loc)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>ko_comp <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_comp_json <span class="sc">%&gt;%</span> spread_all)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>modules <span class="ot">=</span> ko_comp[ko_comp<span class="sc">$</span>attributes.completeness <span class="sc">==</span> <span class="dv">100</span>,][, <span class="fu">c</span>(<span class="st">"attributes.accession"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(modules)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>'M00001'</li><li>'M00002'</li><li>'M00003'</li><li>'M00004'</li><li>'M00005'</li><li>'M00006'</li></ol>
+</div>
+</div>
+</section>
+<section id="selecting-the-most-complete-pathways" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-the-most-complete-pathways">1.2. Selecting the most complete pathways <a id="part1_2"></a></h3><a id="part1_2">
+<ol type="1">
+<li>Now we need to collect the list of template pathways where these complete modules can be draw. This step takes less than 1 minute to run.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="35"><a id="part1_2">
+</a><div class="sourceCode cell-code" id="cb19"><a id="part1_2"></a><pre class="sourceCode r code-with-copy"><a id="part1_2"><code class="sourceCode r"><span id="cb19-1"></span></code></a><code class="sourceCode r"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>md_pathways <span class="ot">=</span> <span class="fu">collect_pathways</span>(modules)</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(md_pathways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<ol>
+    <li>'map00010'</li>
+    <li>'map00010'</li>
+    <li>'map00010'</li>
+    <li>'map00020'</li>
+    <li>'map00030'</li>
+    <li>'map00030'</li>
+</ol>
+</div>
+</div>
+<ol start="2" type="1">
+<li>In order to draw the most complete pathways maps, we will use the list of templates we obtained in the previous step and select only pathways having all their constituent modules.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counting the number of modules we have in each pathway</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>our_pathways_counts <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (path_element <span class="cf">in</span> md_pathways) {</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (path_element <span class="sc">%in%</span> <span class="fu">names</span>(our_pathways_counts)) {</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        new_value <span class="ot">=</span> our_pathways_counts[[path_element]] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        our_pathways_counts[path_element] <span class="ot">=</span> new_value       </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        our_pathways_counts[path_element] <span class="ot">=</span> <span class="dv">1</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Counting the number of modules expected in each pathway</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>u_pathways <span class="ot">=</span> <span class="fu">unique</span>(md_pathways)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>exp_pathways_counts <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (path <span class="cf">in</span> u_pathways) {</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    mod_count <span class="ot">=</span> <span class="fu">length</span>(<span class="fu">as.list</span>(<span class="fu">keggLink</span>(<span class="st">"module"</span>, path)))</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    exp_pathways_counts[path] <span class="ot">=</span> mod_count </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting the pathways having all their constituent modules. We remove the 'map' prefix as pathview doesn't like it</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>to_draw <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pathway <span class="cf">in</span> <span class="fu">names</span>(our_pathways_counts)) {</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    our_value <span class="ot">=</span> our_pathways_counts[[pathway]]</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    exp_value <span class="ot">=</span> exp_pathways_counts[[pathway]]</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    ratio <span class="ot">=</span>  our_value <span class="sc">/</span> exp_value</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (ratio <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>        nude_id <span class="ot">=</span>  <span class="fu">gsub</span>(<span class="st">"map"</span>, <span class="st">""</span>, pathway)</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>        to_draw <span class="ot">=</span> <span class="fu">append</span>(to_draw, nude_id)   </span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>to_draw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<ol>
+    <li>'00010'</li>
+    <li>'00480'</li>
+    <li>'00430'</li>
+    <li>'00521'</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="ready-to-draw" class="level3">
+<h3 class="anchored" data-anchor-id="ready-to-draw">1.3. Ready to draw! <a id="part1_3"></a></h3><a id="part1_3">
+<ol type="1">
+<li>As we are plotting absence/presence, we set the number of bins = 2, the scale in one direction, and use 1 as limit.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="21"><a id="part1_3">
+</a><div class="sourceCode cell-code" id="cb23"><a id="part1_3"></a><pre class="sourceCode r code-with-copy"><a id="part1_3"><code class="sourceCode r"><span id="cb23-1"></span></code></a><code class="sourceCode r"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> to_draw) {
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pathview</span>(<span class="at">gene.data =</span> ko_matrix, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">species =</span> <span class="st">"ko"</span>, </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">pathway.id =</span> p, </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">bins=</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">both.dirs =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">limit =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">mid =</span> <span class="fu">c</span>(<span class="st">"#ffffff"</span> , <span class="st">"#ffffff"</span>), </span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">high =</span> <span class="fu">c</span>(<span class="st">"#02b3ad"</span> , <span class="st">"#02b3ad"</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Note: Only KEGG ortholog gene ID is supported, make sure it looks like "K01488"!
+
+Note: Mapping via KEGG gene ID (not Entrez) is supported for this species,
+it looks like "K01488"!
+
+Info: Downloading xml files for ko00010, 1/1 pathways..
+
+Info: Downloading png files for ko00010, 1/1 pathways..
+
+Info: Working in directory /home/jovyan/mgnify-examples/R Examples
+
+Info: Writing image file ko00010.pathview.png
+
+Note: Only KEGG ortholog gene ID is supported, make sure it looks like "K01488"!
+
+Note: Mapping via KEGG gene ID (not Entrez) is supported for this species,
+it looks like "K01488"!
+
+Info: Downloading xml files for ko00480, 1/1 pathways..
+
+Info: Downloading png files for ko00480, 1/1 pathways..
+
+Info: Working in directory /home/jovyan/mgnify-examples/R Examples
+
+Info: Writing image file ko00480.pathview.png
+
+Note: Only KEGG ortholog gene ID is supported, make sure it looks like "K01488"!
+
+Note: Mapping via KEGG gene ID (not Entrez) is supported for this species,
+it looks like "K01488"!
+
+Info: Downloading xml files for ko00430, 1/1 pathways..
+
+Info: Downloading png files for ko00430, 1/1 pathways..
+
+Info: Working in directory /home/jovyan/mgnify-examples/R Examples
+
+Info: Writing image file ko00430.pathview.png
+
+Note: Only KEGG ortholog gene ID is supported, make sure it looks like "K01488"!
+
+Note: Mapping via KEGG gene ID (not Entrez) is supported for this species,
+it looks like "K01488"!
+
+Info: Downloading xml files for ko00521, 1/1 pathways..
+
+Info: Downloading png files for ko00521, 1/1 pathways..
+
+Info: Working in directory /home/jovyan/mgnify-examples/R Examples
+
+Info: Writing image file ko00521.pathview.png
+</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Cleaning the working directory.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"output_plots"</span>)){</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="st">"output_plots"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="st">"output_plots/single_sample"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="at">from=</span><span class="fu">list.files</span>(<span class="at">pattern=</span><span class="st">"./*pathview.png"</span>), <span class="at">to=</span><span class="st">"./output_plots/single_sample/"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>png_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.png"</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>xml_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.xml"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>files <span class="ot">=</span> <span class="fu">c</span>(png_files, xml_files)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class="list-inline"><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
+</div>
+</div>
+<ol start="3" type="1">
+<li>This is one example of Pathview outputs. The rest of the generated figures are stored at <code>output_plots/single_sample/</code> directory. You can explore the files by clicking on them at the left-side panel.</li>
+</ol>
+<div style="max-width:800px">
+<img src="output_plots/single_sample/ko00010.pathview.png" width="100%">
+</div>
+</section>
+</section>
+<section id="part-2.-comparing-groups-of-samples-drawing-kos-abundance" class="level2">
+<h2 class="anchored" data-anchor-id="part-2.-comparing-groups-of-samples-drawing-kos-abundance">Part 2. Comparing groups of samples, drawing KOs abundance <a id="part2"></a></h2><a id="part2">
+</a><p><a id="part2">In this part of the notebook we use the whole list of accessions for both studies (<code>MGYS00006180</code> and <code>MGYS00006178</code>). After integrate the KO’s tables, we run </a><a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/ALDEx2/inst/doc/ALDEx2_vignette.html">Aldex2</a> to find differentially abudant KOs between honeybees from Japan and Switzerland, and we use the <code>effect</code> as scale to plot the pathways with the highest number of differentially abundant KOs. Consider that steps involving fetching KO tables and <code>KEGGREST</code> queries can take several minutes to run.</p>
+<section id="fetching-ko-tables-from-mgnify" class="level3">
+<h3 class="anchored" data-anchor-id="fetching-ko-tables-from-mgnify">2.1. Fetching KO tables from MGnify <a id="part2_1"></a></h3><a id="part2_1">
+<ol type="1">
+<li>Generating condition labels.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="40"><a id="part2_1">
+</a><div class="sourceCode cell-code" id="cb26"><a id="part2_1"></a><pre class="sourceCode r code-with-copy"><a id="part2_1"><code class="sourceCode r"><span id="cb26-1"></span></code></a><code class="sourceCode r"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>accession_alias <span class="ot">=</span> <span class="fu">subset</span>(all_metadata, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">'analysis_accession'</span>, <span class="st">'study_attributes.accession'</span>))</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cond_list <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (study_id <span class="cf">in</span> accession_alias<span class="sc">$</span><span class="st">'study_attributes.accession'</span>) {</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (study_id <span class="sc">==</span> <span class="st">'MGYS00006180'</span>) {</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        cond_list <span class="ot">=</span> <span class="fu">append</span>(cond_list , <span class="st">'Japan'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        cond_list <span class="ot">=</span> <span class="fu">append</span>(cond_list , <span class="st">'Switzerland'</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>accession_alias<span class="sc">$</span>condition <span class="ot">=</span> cond_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">unlist</span>(accession_alias<span class="sc">$</span>condition))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>
+      Japan Switzerland 
+         40          54 </code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Download and integrate KO counts tables. This step takes 8 minutes to complete.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>samples_list <span class="ot">=</span> accession_alias<span class="sc">$</span><span class="st">'analysis_accession'</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>list_of_dfs <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (accession <span class="cf">in</span> samples_list) {</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    ko_loc <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">'analyses/'</span>,accession,<span class="st">'/kegg-orthologs'</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    ko_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> ko_loc)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    ko_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_json <span class="sc">%&gt;%</span> spread_all)[ , <span class="fu">c</span>(<span class="st">"attributes.accession"</span>, <span class="st">"attributes.count"</span>)]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(ko_data) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'ko_id'</span>, accession)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    list_of_dfs <span class="ot">=</span> <span class="fu">append</span>(list_of_dfs, <span class="fu">list</span>(ko_data)) </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>integrated_df <span class="ot">=</span> <span class="fu">data.frame</span>()</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (df <span class="cf">in</span> list_of_dfs){</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    integrated_df <span class="ot">=</span> <span class="fu">merge</span>(integrated_df,df, <span class="at">all =</span> T)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the KO id column as row names</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(integrated_df) <span class="ot">=</span> integrated_df<span class="sc">$</span>ko_id</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>integrated_df<span class="sc">$</span>ko_id <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting NA to zero </span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>integrated_df[<span class="fu">is.na</span>(integrated_df)] <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Discarding samples that KOs abundance sum = 0</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>integrated_df <span class="ot">=</span> integrated_df <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(is.numeric) <span class="sc">%&gt;%</span> <span class="fu">select_if</span>(<span class="sc">~</span> <span class="fu">sum</span>(. <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(integrated_df, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Reformating the condition label according with the KOs dataframe.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sorted_conds <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (sample <span class="cf">in</span> <span class="fu">colnames</span>(integrated_df)) {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    match <span class="ot">=</span> accession_alias[accession_alias<span class="sc">$</span>analysis_accession <span class="sc">%in%</span> sample,]<span class="sc">$</span>condition</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    cond <span class="ot">=</span> <span class="fu">paste</span>(match, <span class="at">collapse =</span> <span class="st">""</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    sorted_conds <span class="ot">=</span> <span class="fu">append</span>(sorted_conds, cond)    </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>vector_conds <span class="ot">=</span> <span class="fu">unlist</span>(sorted_conds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(vector_conds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generating-differentially-abundance-count-tables" class="level3">
+<h3 class="anchored" data-anchor-id="generating-differentially-abundance-count-tables">2.1. Generating differentially abundance count tables<a id="part2_2"></a></h3><a id="part2_2">
+<ol type="1">
+<li>This step takes 2 minutes to run.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part2_2">
+</a><div class="sourceCode cell-code" id="cb35"><a id="part2_2"></a><pre class="sourceCode r code-with-copy"><a id="part2_2"><code class="sourceCode r"><span id="cb35-1"></span></code></a><code class="sourceCode r"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>x.all <span class="ot">=</span> <span class="fu">aldex</span>(integrated_df, 
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>              vector_conds, </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">mc.samples=</span><span class="dv">128</span>, </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">test=</span><span class="st">"t"</span>, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">effect=</span><span class="cn">TRUE</span>, </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">include.sample.summary=</span><span class="cn">FALSE</span>, </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">denom=</span><span class="st">"all"</span>, </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">verbose=</span><span class="cn">FALSE</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(x.all, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>The column <code>effect</code> in the above output (<code>x.all</code> table) contains the log ratio of the sample mean to the reference mean. A positive effect indicates that the sample mean is greater than the reference mean, while a negative effect indicates that the sample mean is lower than the reference mean. In this example, Japan group is used as reference. We are keeping in a separate matrix the list of KOs and the effect value to be used to plot.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ko_matrix <span class="ot">=</span> <span class="fu">data.matrix</span>(<span class="fu">subset</span>(x.all, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">'effect'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ko_matrix, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Plotting effect and difference (<code>diff.btw</code>) versus P-value. The threshold line indicates P-value = 0.05.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">10</span>, <span class="at">repr.plot.height=</span><span class="dv">8</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x.all<span class="sc">$</span>effect, x.all<span class="sc">$</span>we.ep, <span class="at">log=</span><span class="st">"y"</span>, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.2</span>),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch=</span><span class="dv">19</span>, <span class="at">xlab=</span><span class="st">"Effect size"</span>, <span class="at">ylab=</span><span class="st">"P value"</span>, <span class="at">main=</span><span class="st">"Effect size plot"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x.all<span class="sc">$</span>effect, x.all<span class="sc">$</span>we.eBH, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.05</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"grey"</span>)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">15</span>,<span class="dv">1</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">"P value"</span>, <span class="st">"BH-adjusted"</span>), <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x.all<span class="sc">$</span>diff.btw, x.all<span class="sc">$</span>we.ep, <span class="at">log=</span><span class="st">"y"</span>, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.2</span>),</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch=</span><span class="dv">19</span>, <span class="at">xlab=</span><span class="st">"Difference"</span>, <span class="at">ylab=</span><span class="st">"P value"</span>, <span class="at">main=</span><span class="st">"Volcano plot"</span>)</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x.all<span class="sc">$</span>diff.btw, x.all<span class="sc">$</span>we.eBH, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>),</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch=</span><span class="dv">19</span>)</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.05</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"grey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Reporting features detected by the Welchs’ or Wilcoxon test individually (blue) or by both (red).</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">8</span>, <span class="at">repr.plot.height=</span><span class="dv">8</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>found.by.all <span class="ot">&lt;-</span> <span class="fu">which</span>(x.all<span class="sc">$</span>we.eBH <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> x.all<span class="sc">$</span>wi.eBH <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>found.by.one <span class="ot">&lt;-</span> <span class="fu">which</span>(x.all<span class="sc">$</span>we.eBH <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">|</span> x.all<span class="sc">$</span>wi.eBH <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x.all<span class="sc">$</span>diff.win, x.all<span class="sc">$</span>diff.btw, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">cex=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.3</span>),</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a> <span class="at">xlab=</span><span class="st">"Dispersion"</span>, <span class="at">ylab=</span><span class="st">"Difference"</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x.all<span class="sc">$</span>diff.win[found.by.one], x.all<span class="sc">$</span>diff.btw[found.by.one], <span class="at">pch=</span><span class="dv">19</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a> <span class="at">cex=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.5</span>))</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x.all<span class="sc">$</span>diff.win[found.by.all], x.all<span class="sc">$</span>diff.btw[found.by.all], <span class="at">pch=</span><span class="dv">19</span>,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a> <span class="at">cex=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="selecting-the-pathways-templates-to-draw" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-the-pathways-templates-to-draw">2.3. Selecting the pathways templates to draw<a id="part2_3"></a></h3><a id="part2_3">
+<ol type="1">
+<li>We will use the union of both methods to find the pathways with differentially abundant KOs. This step takes 3 minutes to run.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part2_3">
+</a><div class="sourceCode cell-code" id="cb41"><a id="part2_3"></a><pre class="sourceCode r code-with-copy"><a id="part2_3"><code class="sourceCode r"><span id="cb41-1"></span></code></a><code class="sourceCode r"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>kos_list <span class="ot">=</span> <span class="fu">list</span>()
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (index <span class="cf">in</span> found.by.one){</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    current_ko <span class="ot">=</span> <span class="fu">rownames</span>(x.all)[index]</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    kos_list <span class="ot">=</span> <span class="fu">append</span>(kos_list, current_ko)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ko_pathways <span class="ot">=</span> <span class="fu">collect_pathways</span>(kos_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ko_pathways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Select the top 3 pathways with the highest number of significant KOs.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>pathways_counts <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (path_element <span class="cf">in</span> ko_pathways) {</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (path_element <span class="sc">%in%</span> <span class="fu">names</span>(pathways_counts)) {</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>        new_value <span class="ot">=</span> pathways_counts[[path_element]] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>        pathways_counts[path_element] <span class="ot">=</span> new_value       </span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        pathways_counts[path_element] <span class="ot">=</span> <span class="dv">1</span> </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>top_to_plot <span class="ot">=</span> <span class="fu">names</span>(<span class="fu">tail</span>(pathways_counts[<span class="fu">order</span>(<span class="fu">unlist</span>(pathways_counts))], <span class="dv">3</span>))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>top_to_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plotting-pathways" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-pathways">2.4. Plotting pathways<a id="part2_4"></a></h3><a id="part2_4">
+<ol type="1">
+<li>For this type of data, values range from -1 to 1, with both negative and positive fractions. We use both directions when plotting.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part2_4">
+</a><div class="sourceCode cell-code" id="cb46"><a id="part2_4"></a><pre class="sourceCode r code-with-copy"><a id="part2_4"><code class="sourceCode r"><span id="cb46-1"></span></code></a><code class="sourceCode r"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> top_to_plot) {
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    nude_id <span class="ot">=</span>  <span class="fu">gsub</span>(<span class="st">"map"</span>, <span class="st">""</span>, p)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pathview</span>(<span class="at">gene.data =</span> ko_matrix, </span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">species =</span> <span class="st">"ko"</span>, </span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">pathway.id =</span> nude_id, </span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">both.dirs =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">low =</span> <span class="fu">c</span>(<span class="st">"#bd066b"</span>, <span class="st">"#bd066b"</span>),  </span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">mid =</span> <span class="fu">c</span>(<span class="st">"#c9c9c9"</span> , <span class="st">"#c9c9c9"</span>), </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">high =</span> <span class="fu">c</span>(<span class="st">"#02b3ad"</span> , <span class="st">"#02b3ad"</span>)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Cleaning the working directory.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"output_plots/comparative"</span>)){</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="st">"output_plots/comparative"</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="at">from=</span><span class="fu">list.files</span>(<span class="at">pattern=</span><span class="st">"./*pathview.png"</span>), <span class="at">to=</span><span class="st">"./output_plots/comparative/"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>png_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.png"</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>xml_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.xml"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>files <span class="ot">=</span> <span class="fu">c</span>(png_files, xml_files)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>This is one example of Pathview outputs. The rest of the generated figures are stored at <code>output_plots/comparative/</code> directory. You can explore the files by clicking on them at the left-side panel.</li>
+</ol>
+<div style="max-width:1200px">
+<img src="output_plots/comparative/ko00270.pathview.png" width="100%">
+</div>
+</section>
+</section>
+<section id="part-3.-plotting-presenceabsence-of-kos-and-metabolites-for-one-metagenomic-sample" class="level2">
+<h2 class="anchored" data-anchor-id="part-3.-plotting-presenceabsence-of-kos-and-metabolites-for-one-metagenomic-sample">Part 3. Plotting presence/absence of KOs and metabolites for one metagenomic sample <a id="part3"></a></h2><a id="part3">
+</a><p><a id="part3">We are using supplementary and processed tables from </a><a href="https://doi.org/10.1038/s41564-018-0306-4">Franzosa et al</a>.’s publication, available at <a href="https://doi.org/10.1038/s41522-022-00345-5">The Curated Gut Microbiome Metabolome Data Resource</a>. As normalizing metabolites data is not straightforward, this section will only use presence/absence data from one sample to demonstrate the creation of metabolic pathways maps using metabolites and KOs tables as input.</p>
+<section id="extracting-kos-from-input-tables" class="level3">
+<h3 class="anchored" data-anchor-id="extracting-kos-from-input-tables">3.1. Extracting KOs from input tables <a id="part3_1"></a></h3><a id="part3_1">
+<ol type="1">
+<li>We need a KOs list as input to draw pathways, so we are generating a KOs table from the enzyme (EC number) identifiers in the <code>Supplementary Dataset 6: Per-subject microbial enzyme relative abundance profiles</code>, as there are no KOs count tables available for this data.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part3_1">
+</a><div class="sourceCode cell-code" id="cb48"><a id="part3_1"></a><pre class="sourceCode r code-with-copy"><a id="part3_1"><code class="sourceCode r"><span id="cb48-1"></span></code></a><code class="sourceCode r"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>enzymes_data <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"/home/jovyan/supp_tables/enzymes.tsv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>) </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enzymes_data, <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Cleaning the enzyme IDs to get the EC number only and keeping data for only one sample (PRISM.7122)</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>EC_ids <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>comp_ids <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( enzyme_id <span class="cf">in</span> enzymes_data<span class="sc">$</span>Enzyme ){</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    new_id <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">": .*"</span>, <span class="st">""</span>, enzyme_id)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    EC_ids <span class="ot">=</span> <span class="fu">append</span>(EC_ids, new_id)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Keeping data for PRISM.7122 sample</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>enzymes_df <span class="ot">=</span> <span class="fu">subset</span>(enzymes_data, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">'PRISM.7122'</span>))</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the clean EC number column  as row names</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(enzymes_df) <span class="ot">=</span> EC_ids</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Discarding enzymes with abundance = 0</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>enzymes_clean <span class="ot">=</span> <span class="fu">subset</span>(enzymes_df, enzymes_df[,<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(enzymes_clean, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Finding the corresponding KOs for each EC number. As we want to plot presence/absence we can input Pathview with a list (formatted as vector) of KO ids instead of an abundance matrix. This step takes 4 minutes to complete.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>kos_presence <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( ec_number <span class="cf">in</span> <span class="fu">rownames</span>(enzymes_clean) ){ </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    current_kos <span class="ot">=</span> <span class="fu">as.list</span>(<span class="fu">names</span>(<span class="fu">as.list</span>(<span class="fu">keggFind</span>(<span class="st">"ko"</span>, ec_number))))</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    kos_presence <span class="ot">=</span> <span class="fu">append</span>(kos_presence, current_kos) </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>kos_vector <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">gsub</span>(<span class="st">'ko:'</span>, <span class="st">''</span>, kos_presence))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(kos_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-and-formatting-metabolites-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-and-formatting-metabolites-data">3.2. Loading and formatting metabolites data <a id="part3_2"></a></h3><a id="part3_2">
+</a><ol type="1"><a id="part3_2">
+</a><li><a id="part3_2">We are using the metabolites table available at the </a><a href="https://github.com/borenstein-lab/microbiome-metabolome-curated-data">The Curated Gut Microbiome Metabolome Data Resource github repo</a> generated from the <code>Supplementary Dataset 2: Per-subject metabolite relative abundance profiles</code> of the <a href="https://doi.org/10.1038/s41564-018-0306-4">original publication</a> subsetted for sample PRISM.7122.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>compound_data <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"/home/jovyan/supp_tables/mtb.tsv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>) </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transposing the table</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>compound_data <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(compound_data))</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Keeping data for sample PRISM.7122 only</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>compound_df <span class="ot">=</span> <span class="fu">subset</span>(compound_data, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">'PRISM.7122'</span>))</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Discarding rows with abundance = 0</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>compound_clean <span class="ot">=</span> <span class="fu">subset</span>(compound_df, compound_df[,<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatting row names to be mapped to compound names</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(compound_clean) <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">..*"</span>, <span class="st">""</span>, <span class="fu">row.names</span>(compound_clean))</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(compound_clean) <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="st">"-"</span>, <span class="fu">row.names</span>(compound_clean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(compound_clean, <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Now we have to transform the cluster IDs into KEGG compound IDs. This info is not available in the <a href="https://doi.org/10.1038/s41564-018-0306-4">original publication</a>. Fortunatelly, a mapping table exists available in <a href="https://github.com/borenstein-lab/microbiome-metabolome-curated-data">The Curated Gut Microbiome Metabolome Data Resource github repo</a>. Loading and formatting mapping data to transform cluster ID into KEGG compound ID.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>mapping_data <span class="ot">=</span> <span class="fu">read.table</span>(<span class="st">"/home/jovyan/supp_tables/mtb.map.tsv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="st">'#'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mapping_data, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reducing the table to keep only raw names and KEGG compund ID</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>compound_map <span class="ot">=</span> <span class="fu">subset</span>(mapping_data, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">'KEGG'</span>))</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing rows with NA in the compound ID column</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>compound_map <span class="ot">=</span> <span class="fu">na.omit</span>(compound_map)</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatting the row names to be correctly mapped on the abundance table 'compound_clean'</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(compound_map) <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">": .*"</span>, <span class="st">""</span>, <span class="fu">row.names</span>(compound_map))</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(compound_map, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Generating the compounds list (as vector) to plot as presence/absence.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>cpd_names <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (name <span class="cf">in</span> <span class="fu">rownames</span>(compound_clean)) {</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (name <span class="sc">%in%</span> <span class="fu">rownames</span>(compound_map)) {</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>        compound <span class="ot">=</span> compound_map[<span class="fu">row.names</span>(compound_map) <span class="sc">==</span> name, <span class="st">"KEGG"</span>]</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>        cpd_names <span class="ot">=</span> <span class="fu">append</span>(cpd_names, compound)   </span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>cpd_vector <span class="ot">=</span> <span class="fu">unlist</span>(cpd_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cpd_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Finding pathways with annotated compounds. It takes 2 minutes to run.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>cpd_pathways <span class="ot">=</span> <span class="fu">collect_pathways</span>(cpd_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cpd_pathways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Selecting the top 3 pathways with the largest number of compounds to draw.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>pathways_counts <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (path_element <span class="cf">in</span> cpd_pathways) {</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (path_element <span class="sc">%in%</span> <span class="fu">names</span>(pathways_counts)) {</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>        new_value <span class="ot">=</span> pathways_counts[[path_element]] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>        pathways_counts[path_element] <span class="ot">=</span> new_value       </span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>        pathways_counts[path_element] <span class="ot">=</span> <span class="dv">1</span> </span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>top_to_plot <span class="ot">=</span> <span class="fu">names</span>(<span class="fu">tail</span>(pathways_counts[<span class="fu">order</span>(<span class="fu">unlist</span>(pathways_counts))], <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>top_to_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="drawing" class="level3">
+<h3 class="anchored" data-anchor-id="drawing">3.3. Drawing! <a id="part3_3"></a></h3><a id="part3_3">
+<ol type="1">
+<li>As we are plotting absence/presence, we set the number of bins = 2, the scale in one direction, and use 1 as limit.</li>
+</ol>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part3_3">
+</a><div class="sourceCode cell-code" id="cb64"><a id="part3_3"></a><pre class="sourceCode r code-with-copy"><a id="part3_3"><code class="sourceCode r"><span id="cb64-1"></span></code></a><code class="sourceCode r"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> top_to_plot) {
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    nude_id <span class="ot">=</span>  <span class="fu">gsub</span>(<span class="st">"map"</span>, <span class="st">""</span>, p)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pathview</span>(<span class="at">gene.data =</span> kos_vector, </span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">cpd.data =</span> cpd_vector, </span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">species =</span> <span class="st">"ko"</span>, </span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">pathway.id =</span> nude_id, </span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">bins=</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), </span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">both.dirs =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">limit =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), </span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">mid =</span> <span class="fu">c</span>(<span class="st">"#c9c9c9"</span> , <span class="st">"#c9c9c9"</span>), </span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">high =</span> <span class="fu">c</span>(<span class="st">"#02b3ad"</span> , <span class="st">"#d67e03"</span>)</span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Cleaning working directory.</li>
+</ol>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"output_plots/metabolites"</span>)){</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="st">"output_plots/metabolites"</span>)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.copy</span>(<span class="at">from=</span><span class="fu">list.files</span>(<span class="at">pattern=</span><span class="st">"./*pathview.png"</span>), <span class="at">to=</span><span class="st">"./output_plots/metabolites/"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>png_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.png"</span>)</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>xml_files <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>, <span class="at">pattern =</span> <span class="st">"*.xml"</span>)</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>files <span class="ot">=</span> <span class="fu">c</span>(png_files, xml_files)</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>This is one example of Pathview outputs. The rest of the generated figures are stored at <code>output_plots/metabolites/</code> directory. You can explore the files by clicking on them at the left-side panel.</li>
+</ol>
+<div style="max-width:1400px">
+<img src="output_plots/metabolites/ko05230.pathview.png" width="100%">
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>?pathview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>### References: </p>
+<section id="datasets-and-databases-papers" class="level4">
+<h4 class="anchored" data-anchor-id="datasets-and-databases-papers">Datasets and databases papers:</h4>
+<p>Honeybee datasets (used in parts 1 and 2 of this notebook): https://doi.org/10.1073/pnas.2000228117</p>
+<p>Metabolites dataset (used in part 3): https://doi.org/10.1038/s41564-018-0306-4</p>
+<p>The Curated Gut Microbiome Metabolome Data Resource (used in part 3): https://doi.org/10.1038/s41522-022-00345-5</p>
+<p>MGnify pipeline: https://doi.org/10.1093/nar/gkac1080</p>
+<p>KEGG database: https://doi.org/10.1093/nar/gkw1092</p>
+</section>
+<section id="r-libraries" class="level4">
+<h4 class="anchored" data-anchor-id="r-libraries">R libraries:</h4>
+<ul>
+<li><p><code>library(ALDEx2)</code> Gloor GB, Macklaim JM, Fernandes AD (2016). Displaying Variation in Large Datasets: a Visual Summary of Effect Sizes. Journal of Computational and Graphical Statistics, 2016 http://doi.org/10.1080/10618600.2015.1131161. R package version 1.30.0.</p></li>
+<li><p><code>library(data.table)</code> Matt Dowle and Arun Srinivasan (2023). data.table: Extension of <code>data.frame</code>. R package version 1.14.8. https://CRAN.R-project.org/package=data.table</p></li>
+<li><p><code>library(dplyr)</code> Hadley Wickham, Romain François, Lionel Henry, Kirill Müller and Davis Vaughan (2023). dplyr: A Grammar of Data Manipulation. R package version 1.1.2. https://CRAN.R-project.org/package=dplyr</p></li>
+<li><p><code>library(IRdisplay)</code> Thomas Kluyver, Philipp Angerer and Jan Schulz (NA). IRdisplay: ‘Jupyter’ Display Machinery. R package version 1.1. https://github.com/IRkernel/IRdisplay</p></li>
+<li><p><code>library(KEGGREST)</code> Dan Tenenbaum and Bioconductor Package Maintainer (2021). KEGGREST: Client-side REST access to the Kyoto Encyclopedia of Genes and Genomes (KEGG). R package version 1.38.0.</p></li>
+<li><p><code>library(MGnifyR)</code> Ben Allen (2022). MGnifyR: R interface to EBI MGnify metagenomics resource. R package version 0.1.0.</p></li>
+<li><p><code>library(pathview)</code> Luo, W. and Brouwer C., Pathview: an R/Bioconductor package for pathway-based data integration and visualization. Bioinformatics, 2013, 29(14): 1830-1831, doi: 10.1093/bioinformatics/btt285. R package version 1.38.0.</p></li>
+<li><p><code>library(tidyjson)</code> Jeremy Stanley and Cole Arendt (2023). tidyjson: Tidy Complex ‘JSON’. R package version 0.3.2. https://CRAN.R-project.org/package=tidyjson</p></li>
+</ul>
+</section>
+<section id="going-deeper" class="level4">
+<h4 class="anchored" data-anchor-id="going-deeper">Going deeper:</h4>
+<p>If you want to learn more about using MGnifyR, you can follow the online tutorial available here: https://www.ebi.ac.uk/training/online/courses/metagenomics-bioinformatics/mgnifyr/</p>
+<p>KEGGREST documentation with multiple examples: https://www.bioconductor.org/packages/devel/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html</p>
+<p>Pathview user manual: https://www.bioconductor.org/packages/release/bioc/vignettes/pathview/inst/doc/pathview.pdf</p>
+
+<a id="intro">
+</a></section><a id="intro">
+</a></section><a id="intro">
+</a></section><a id="intro">
+
+</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><a id="refs"></a></section></div></main><a id="intro"> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</a></div><a id="intro"> <!-- /content -->
+
+
+
+</a></body></html>

@@ -7,7 +7,14 @@ description:  "Condensed list of visualisations used in MGnify"
 title-block-banner: true
 ---
 
+
+<div style="width:70%;">
+
 ![](mgnify.png)
+
+</div>
+
+
 
 # Sample Viz
 ## Map of sample locations
@@ -177,3 +184,19 @@ KEGG API
 **Visualisation type:** pathway network
 
 **Technology used:** pathviz R package
+
+
+# Genome Viz
+
+#### Function Annotation
+
+#### COG Analysis
+
+#### KEGG Class Analysis
+
+#### KEGG Module Analysis
+
+#### Taxonomic Tree
+
+
+<!-- ![](mgnify.png) -->

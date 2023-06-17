@@ -2,7 +2,7 @@
 title: "Amartya's GSoC Journal"
 listing:
   contents: 
-   - posts/*
+   - posts/*/index.qmd
    - The Project/project.qmd
   sort: "date desc"
   type: default
