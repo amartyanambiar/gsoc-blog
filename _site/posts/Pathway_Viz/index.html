@@ -8,7 +8,7 @@
 
 <meta name="author" content="Amartya Nambiar">
 <meta name="dcterms.date" content="2023-06-15">
-<meta name="description" content="&nbsp;Exploring the Pathway Visualisation Notebook by Alejandra Escobar (MGnify team)">
+<meta name="description" content="&nbsp;Exploring the Pathway Visualisation Notebook by Alejandra Escobar (EBI Bioinformatician)">
 
 <title>GSoC - 23 : The MGnify Project - Pathway Visualisation</title>
 <style>
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Pathway Visualisation</h1>
                   <div>
         <div class="description">
-          &nbsp;Exploring the Pathway Visualisation Notebook by Alejandra Escobar (MGnify team)
+          &nbsp;Exploring the Pathway Visualisation Notebook by Alejandra Escobar (EBI Bioinformatician)
         </div>
       </div>
                           <div class="quarto-categories">
@@ -270,7 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#libraries-used" id="toc-libraries-used" class="nav-link active" data-scroll-target="#libraries-used">Libraries Used</a></li>
-  <li><a href="#coleccting-pathways-using-kegglink-keggrest-package" id="toc-coleccting-pathways-using-kegglink-keggrest-package" class="nav-link" data-scroll-target="#coleccting-pathways-using-kegglink-keggrest-package">Coleccting Pathways using keggLink (KEGGREST Package)</a></li>
+  <li><a href="#collecting-pathways-using-kegglink-keggrest-package" id="toc-collecting-pathways-using-kegglink-keggrest-package" class="nav-link" data-scroll-target="#collecting-pathways-using-kegglink-keggrest-package">Collecting Pathways using keggLink (KEGGREST Package)</a></li>
+  <li><a href="#mgnifyr-setup-accession-of-analyses" id="toc-mgnifyr-setup-accession-of-analyses" class="nav-link" data-scroll-target="#mgnifyr-setup-accession-of-analyses">MGnifyR Setup =&gt; Accession of Analyses</a></li>
   </ul>
 </nav>
     </div>
@@ -311,8 +312,8 @@ Importing Libraries
 </div>
 </div>
 </section>
-<section id="coleccting-pathways-using-kegglink-keggrest-package" class="level4">
-<h4 class="anchored" data-anchor-id="coleccting-pathways-using-kegglink-keggrest-package">Coleccting Pathways using keggLink (KEGGREST Package)</h4>
+<section id="collecting-pathways-using-kegglink-keggrest-package" class="level4">
+<h4 class="anchored" data-anchor-id="collecting-pathways-using-kegglink-keggrest-package">Collecting Pathways using keggLink (KEGGREST Package)</h4>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -339,7 +340,31 @@ Setting up Function for Pathways Collection
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pathways)</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li></li>
+<li><strong>Input</strong> : List of Modules :: Output : List of Pathways</li>
+<li><strong>keggLink()</strong> is used to retrieve pathway info -&gt; <em>“pathway”</em>.</li>
+<li>Using <strong>grep</strong> to get the <em>pathway maps</em> specifically.</li>
+<li>Getting rid of some pathways<mark style="background-color:red"><strong>TODO</strong></mark></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="mgnifyr-setup-accession-of-analyses" class="level4">
+<h4 class="anchored" data-anchor-id="mgnifyr-setup-accession-of-analyses">MGnifyR Setup =&gt; Accession of Analyses</h4>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sample Selection &amp; Analyses Accession
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mg <span class="ot">=</span> <span class="fu">mgnify_client</span>(<span class="at">usecache =</span> T, <span class="at">cache_dir =</span> <span class="st">'/home/jovyan/.mgnify_cache'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>all_accessions <span class="ot">=</span> <span class="fu">mgnify_analyses_from_studies</span>(mg, <span class="fu">c</span>(<span class="st">'MGYS00006180'</span>,<span class="st">'MGYS00006178'</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>all_metadata <span class="ot">=</span> <span class="fu">mgnify_get_analyses_metadata</span>(mg, all_accessions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Both the studies chosen by <a href="https://www.embl.org/people/person/alejandra-escobar-zepeda/">Alejandra Escobar</a> are related to the gut bacteria of honeybees.</li>
 </ul>
 </div>
 </div>

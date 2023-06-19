@@ -9,14 +9,12 @@ title-block-banner: true
 
 <!-- #### What does it do? -->
 
-
 #### Libraries Used
 
-::: {.callout-note icon=false}
-
+::: {.callout-note icon="false"}
 # Importing Libraries
 
-```r
+``` r
 library(ALDEx2)
 library(data.table)
 library(dplyr)
@@ -27,22 +25,19 @@ library(pathview)
 library(tidyjson)
 ```
 
-- **ALDEx2** : Analyzing and comparing the abundance or occurrence of KEGG orthologs or modules within different samples or datasets.
-- **data.table**, **dplyr** : Used for data manipulation and transformation.
-- **KEGGREST** : Allows accessing KEGG pathways.
-- **MGnifyR** : It wraps the MGnify API in R functions.
-- **pathview** : Used for visualizing and analyzing pathway data with gene or protein expression data overlaid.
-
+-   **ALDEx2** : Analyzing and comparing the abundance or occurrence of KEGG orthologs or modules within different samples or datasets.
+-   **data.table**, **dplyr** : Used for data manipulation and transformation.
+-   **KEGGREST** : Allows accessing KEGG pathways.
+-   **MGnifyR** : It wraps the MGnify API in R functions.
+-   **pathview** : Used for visualizing and analyzing pathway data with gene or protein expression data overlaid.
 :::
 
+#### Collecting Pathways using keggLink (KEGGREST Package)
 
-#### Coleccting Pathways using keggLink (KEGGREST Package) 
-
-::: {.callout-note icon=false}
-
+::: {.callout-note icon="false"}
 # Setting up Function for Pathways Collection
 
-```r
+``` r
 collect_pathways <- function(ids_list) {
     pathways = list()
     for (id in ids_list) { 
@@ -60,19 +55,22 @@ collect_pathways <- function(ids_list) {
 }
 ```
 
-- *Input* :
-
+-   **Input** : List of Modules :: Output : List of Pathways
+-   **keggLink()** is used to retrieve pathway info -\> *"pathway"*.
+-   Using **grep** to get the *pathway maps* specifically.
+-   Getting rid of some pathways<mark style="background-color:red">**TODO**</mark>
 :::
 
+#### MGnifyR Setup =\> Accession of Analyses
 
+::: {.callout-note icon="false"}
+# Sample Selection & Analyses Accession
 
+``` r
+mg = mgnify_client(usecache = T, cache_dir = '/home/jovyan/.mgnify_cache')
+all_accessions = mgnify_analyses_from_studies(mg, c('MGYS00006180','MGYS00006178'))
+all_metadata = mgnify_get_analyses_metadata(mg, all_accessions)
+```
 
-
-
-
-
-
-
-
-
-
+-   Both the studies chosen by [Alejandra Escobar](https://www.embl.org/people/person/alejandra-escobar-zepeda/) are related to the gut bacteria of honeybees.
+:::
