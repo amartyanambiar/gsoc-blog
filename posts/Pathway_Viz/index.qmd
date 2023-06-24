@@ -6,7 +6,9 @@ categories: ["Notebook"]
 description:  "&nbsp;Exploring the Pathway Visualisation Notebook by Alejandra Escobar (EBI Bioinformatician)"
 title-block-banner: true
 ---
-
+<div style="text-align:center">
+![](pathway.png){width="500" height="300"}
+</div>
 <!-- #### What does it do? -->
 
 #### Libraries Used

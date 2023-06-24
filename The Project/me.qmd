@@ -15,6 +15,6 @@ title-block-banner: true
 
 []()
 
-![](my_pic.png){width=25%}
+![](The Project/images/my_pic.png){width=25%}
 :::
 

@@ -22,7 +22,7 @@ They are part of the European Molecular Biology Laboratory (EMBL), an intergover
 
 []()
 
-![](martin.jpeg)
+![](images/martin.jpeg)
 :::
 
 
@@ -37,6 +37,6 @@ They are part of the European Molecular Biology Laboratory (EMBL), an intergover
 
 []()
 
-![](sandy.jpeg)
+![](images/sandy.jpeg)
 :::
 ----
