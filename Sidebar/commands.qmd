@@ -9,14 +9,39 @@ title-block-banner: true
 
 #### Get The Jupyter Lab Server Up and Running
 
-::: {.callout-note icon=false}
+::: {.callout-note icon="false"}
+## For  <mark style="background-color: yellow">pathways_vis</mark>  Branch
 
-## For &nbsp;<mark style="background-color: yellow">pathways_vis</mark>&nbsp;  Branch
-
-```bash 
+``` bash
 docker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \
 quay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis
 ```
-
 :::
 
+#### Static Documentation Rendering
+
+::: {.callout-note icon="false"}
+## Build the Docker Image for Quarto Rendering
+
+``` bash
+docker build -f docker/docs.Dockerfile -t notebooks-static .
+```
+:::
+
+
+::: {.callout-note icon="false"}
+## Render the Docs & Notebooks
+
+``` bash
+docker run -it -v $PWD:/opt/repo -w /opt/repo notebooks-static render --execute
+```
+:::
+
+
+::: {.callout-note icon="false"}
+## Start the server for serving the Quarto rendered files
+
+``` bash
+docker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static -m http.server 4444
+```
+:::

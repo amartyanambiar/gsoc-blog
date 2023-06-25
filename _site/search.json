@@ -11,7 +11,7 @@
     "href": "Sidebar/commands.html",
     "title": "Saviour Commands",
     "section": "",
-    "text": "Get The Jupyter Lab Server Up and Running\n\n\n\n\n\n\nFor  pathways_vis  Branch\n\n\n\ndocker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \\\nquay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis"
+    "text": "Get The Jupyter Lab Server Up and Running\n\n\n\n\n\n\nFor  pathways_vis  Branch\n\n\n\ndocker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \\\nquay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis\n\n\n\n\nStatic Documentation Rendering\n\n\n\n\n\n\nBuild the Docker Image for Quarto Rendering\n\n\n\ndocker build -f docker/docs.Dockerfile -t notebooks-static .\n\n\n\n\n\n\n\n\nRender the Docs & Notebooks\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo notebooks-static render --execute\n\n\n\n\n\n\n\n\nStart the server for serving the Quarto rendered files\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static -m http.server 4444"
   },
   {
     "objectID": "posts/Viz_Recon/index.html#map-of-sample-locations",
