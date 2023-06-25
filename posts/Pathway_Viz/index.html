@@ -281,6 +281,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<div style="text-align:center">
+<p><img src="pathway.png" width="500" height="400"></p>
+</div>
 <!-- #### What does it do? -->
 <section id="libraries-used" class="level4">
 <h4 class="anchored" data-anchor-id="libraries-used">Libraries Used</h4>
@@ -363,6 +366,9 @@ Sample Selection &amp; Analyses Accession
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mg <span class="ot">=</span> <span class="fu">mgnify_client</span>(<span class="at">usecache =</span> T, <span class="at">cache_dir =</span> <span class="st">'/home/jovyan/.mgnify_cache'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>all_accessions <span class="ot">=</span> <span class="fu">mgnify_analyses_from_studies</span>(mg, <span class="fu">c</span>(<span class="st">'MGYS00006180'</span>,<span class="st">'MGYS00006178'</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>all_metadata <span class="ot">=</span> <span class="fu">mgnify_get_analyses_metadata</span>(mg, all_accessions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Both the studies chosen by <a href="https://www.embl.org/people/person/alejandra-escobar-zepeda/">Alejandra Escobar</a> are related to the gut bacteria of honeybees.</li>
+</ul>
 </div>
 </div>
 
