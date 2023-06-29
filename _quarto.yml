@@ -1,10 +1,11 @@
 project:
   type: website
   render:
-        - index.qmd
-        - posts/*
-        - The Project/*
-        - Sidebar/*    
+    - index.qmd
+    - Sidebar
+    - The Project
+    - posts
+    - src/notebooks/PathwaysExplorer.ipynb
   
 website:
   title: "GSoC - 23 : The MGnify Project"
@@ -27,7 +28,7 @@ website:
     contents:
       - section: "**Highlights**"
         contents:
-          - posts/Pathway_Viz/PathwaysExplorer.ipynb
+          - src/notebooks/PathwaysExplorer.ipynb
           - posts/Viz_Recon/index.qmd
 
       - section: "**About**"

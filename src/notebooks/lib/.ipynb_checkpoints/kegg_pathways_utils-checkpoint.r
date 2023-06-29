@@ -9,10 +9,10 @@ get_pathway_info <- function(pathway) {
 
 # Function to prompt users for pathway selection and return custom pathway IDs
 PathwaysSelection <- function() {
-  cat("Pathways Selection :\n",
-      "- For the most general & most complete pathways, input 'G'\n",
-      "- Press Enter to generate the most complete pathways\n",
-      "- To add custom pathways, input pathway numbers (ex: 00053,01220)\n\n")
+    display_markdown("#### Pathways Selection :\n\n
+- For the most general & most complete pathways, input 'G'\n\n
+- Press Enter to generate the most complete pathways\n\n
+- To add custom pathways, input pathway numbers (ex: 00053,01220)")
     
   flush.console()
   CUSTOM_PATHWAY_IDS <- get_variable_from_link_or_input('CUSTOM_PATHWAY_IDS', name = 'Pathways Accession', default = '')
@@ -33,6 +33,7 @@ PathwaysSelection <- function() {
     return(CUSTOM_PATHWAY_IDS)
 }
 
+          
 # Clearing the current working directory and displaying generated figures from `pathway_plots/` directory
 generatePathwayPlots <- function() {
 # Clearing the current working directory
@@ -53,9 +54,7 @@ generatePathwayPlots <- function() {
   images <- list.files("pathway_plots", full.names = TRUE)
 
   for (pathway in images) {
-    print(get_pathway_info(gsub("[^0-9]", "", basename(pathway)))$pathway_name)
-    Sys.sleep(1)
-    flush.console()
+    display_markdown(get_pathway_info(gsub("[^0-9]", "", basename(pathway)))$pathway_name)
     display_png(file = pathway)
   }
 }

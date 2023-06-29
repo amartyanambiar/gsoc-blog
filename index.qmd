@@ -1,9 +1,9 @@
 ---
 title: "Amartya's GSoC Journal"
 listing:
-  contents: 
+  contents:
+   - src/notebooks/PathwaysExplorer.ipynb 
    - posts/*/index.qmd
-   - posts/Pathway_Viz/PathwaysExplorer.ipynb
    - The Project/project.qmd
   sort: "date desc"
   type: default
@@ -13,5 +13,4 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
-
 

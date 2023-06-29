@@ -1,9 +1,9 @@
 ---
-title: "MGnify Visualisation Recon"
+title: "MGnify Visualization Recon"
 author: "Amartya Nambiar"
 date: "2023-06-12"
-categories: []
-description:  "Condensed list of visualisations used in MGnify"
+categories: [Visualization]
+description:  "Condensed list of Visualizations used in MGnify"
 title-block-banner: true
 ---
 
@@ -26,7 +26,7 @@ title-block-banner: true
 
 **Dataset:** Sample metadata (from ENA)
 
-**Visualisation type:** Geographical Map
+**Visualization type:** Geographical Map
 
 **Technology used:** Google Maps embed
 
@@ -48,7 +48,7 @@ title-block-banner: true
 **What it shows:** Number of reads which pass the quality control steps
 in the pipeline.
 
-**Visualisation type:** Normal X-axis Charts
+**Visualization type:** Normal X-axis Charts
 
 #### Read Length & Read GC Distribution
 
@@ -56,7 +56,7 @@ in the pipeline.
 and percentage GC content for the sequences having passed quality
 control.
 
-**Visualisation type:** Histogram
+**Visualization type:** Histogram
 
 #### Nucleotide Position Histogram
 
@@ -64,7 +64,7 @@ control.
 T, or ambiguous base \"N\") at each position starting from the beginning
 of each read up to the first 500 base pairs.
 
-**Visualisation type:** Histogram
+**Visualization type:** Histogram
 
 **Dataset:** Accessed through Analyses Accession ID -
 nucleotide-distribution
@@ -83,7 +83,7 @@ Results from the taxonomic analysis steps of the pipeline.
 **Technology used:**
 [[https://github.com/marbl/Krona/wiki]{.underline}](https://github.com/marbl/Krona/wiki)
 
-**Visualisation type:** Krona
+**Visualization type:** Krona
 
 **Dataset:** Accessed through Analyses Accession ID -
 krona\${taxResults}
@@ -92,7 +92,7 @@ krona\${taxResults}
 
 **Technology used:** Highcharts
 
-**Visualisation type:** Pie, Column
+**Visualization type:** Pie, Column
 
 **Dataset:** Accessed through Analysis Accession ID - taxonomy
 
@@ -100,7 +100,7 @@ krona\${taxResults}
 
 **Technology used:** Highcharts
 
-**Visualisation type:** Pie, Column, Stacked Column
+**Visualization type:** Pie, Column, Stacked Column
 
 **Dataset:** Accessed through Analysis Accession ID - taxonomy
 
@@ -119,7 +119,7 @@ summarise the functional content of the sequences in the sample.
 
 **Technology used:** Highcharts
 
-**Visualisation type:** X-axis Chart, Pie
+**Visualization type:** X-axis Chart, Pie
 
 #### GO Terms
 
@@ -128,7 +128,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Technology used:** Highcharts
 
-**Visualisation type:** Bar, Pie
+**Visualization type:** Bar, Pie
 
 #### Pfam
 
@@ -136,7 +136,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Technology used:** Highcharts
 
-**Visualisation type:** Bar
+**Visualization type:** Bar
 
 #### KO
 
@@ -144,7 +144,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Technology used:** Highcharts
 
-**Visualisation type:** Bar
+**Visualization type:** Bar
 
 ## Contig Viewer
 
@@ -155,7 +155,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Dataset:** through assembly ID, FASTA URL
 
-**Visualisation type:** Contig viewer
+**Visualization type:** Contig viewer
 
 **Technology used:** IGV
 
@@ -170,7 +170,7 @@ the pipeline.
 
 #### antiSMASH
 
-## Kegg pathway visualisation
+## Kegg pathway Visualization
 
 **Example URL:**
 [[https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb]{.underline}](https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb)
@@ -181,7 +181,7 @@ the pipeline.
 **Dataset:** combination of an MGYA Kegg Module list and a Pathway from
 KEGG API
 
-**Visualisation type:** pathway network
+**Visualization type:** pathway network
 
 **Technology used:** pathviz R package
 
