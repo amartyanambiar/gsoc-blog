@@ -18,6 +18,8 @@ quay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis
 ```
 :::
 
+------------------------------------------------------------------------
+
 #### Static Documentation Rendering
 
 ::: {.callout-note icon="false"}
@@ -28,7 +30,6 @@ docker build -f docker/docs.Dockerfile -t notebooks-static .
 ```
 :::
 
-
 ::: {.callout-note icon="false"}
 ## Render the Docs & Notebooks
 
@@ -37,11 +38,11 @@ docker run -it -v $PWD:/opt/repo -w /opt/repo notebooks-static render --execute
 ```
 :::
 
-
 ::: {.callout-note icon="false"}
 ## Start the server for serving the Quarto rendered files
 
 ``` bash
-docker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static -m http.server 4444
+docker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static \
+ -m http.server 4444
 ```
 :::

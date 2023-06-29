@@ -3,6 +3,7 @@ title: "Amartya's GSoC Journal"
 listing:
   contents: 
    - posts/*/index.qmd
+   - posts/Pathway_Viz/PathwaysExplorer.ipynb
    - The Project/project.qmd
   sort: "date desc"
   type: default
