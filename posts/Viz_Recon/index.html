@@ -65,7 +65,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -111,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/Viz_Recon/index.html"><strong>Highlights</strong></a></li><li class="breadcrumb-item"><a href="../../posts/Viz_Recon/index.html">MGnify Visualisation Recon</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/Pathway_Viz/PathwaysExplorer.html"><strong>Highlights</strong></a></li><li class="breadcrumb-item"><a href="../../posts/Viz_Recon/index.html">MGnify Visualisation Recon</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -154,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -173,6 +172,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Pathway_Viz/PathwaysExplorer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pathways Visualization</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Viz_Recon/index.html" class="sidebar-item-text sidebar-link active">
@@ -229,56 +234,28 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of Contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#sample-viz" id="toc-sample-viz" class="nav-link active" data-scroll-target="#sample-viz">Sample Viz</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#map-of-sample-locations" id="toc-map-of-sample-locations" class="nav-link" data-scroll-target="#map-of-sample-locations">Map of sample locations</a></li>
   </ul></li>
   <li><a href="#analysis-viz" id="toc-analysis-viz" class="nav-link" data-scroll-target="#analysis-viz">Analysis Viz</a>
-  <ul>
-  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">Quality Control</a>
-  <ul>
-  <li><a href="#number-of-sequence-reads-per-qc-step" id="toc-number-of-sequence-reads-per-qc-step" class="nav-link" data-scroll-target="#number-of-sequence-reads-per-qc-step">Number of Sequence Reads per QC step</a></li>
-  <li><a href="#read-length-read-gc-distribution" id="toc-read-length-read-gc-distribution" class="nav-link" data-scroll-target="#read-length-read-gc-distribution">Read Length &amp; Read GC Distribution</a></li>
-  <li><a href="#nucleotide-position-histogram" id="toc-nucleotide-position-histogram" class="nav-link" data-scroll-target="#nucleotide-position-histogram">Nucleotide Position Histogram</a></li>
-  </ul></li>
-  <li><a href="#taxonomic-analysis" id="toc-taxonomic-analysis" class="nav-link" data-scroll-target="#taxonomic-analysis">Taxonomic analysis</a>
-  <ul>
-  <li><a href="#krona" id="toc-krona" class="nav-link" data-scroll-target="#krona">Krona</a></li>
-  <li><a href="#domain-composition" id="toc-domain-composition" class="nav-link" data-scroll-target="#domain-composition">Domain Composition</a></li>
-  <li><a href="#phylum-composition" id="toc-phylum-composition" class="nav-link" data-scroll-target="#phylum-composition">Phylum Composition</a></li>
-  </ul></li>
-  <li><a href="#functional-analysis" id="toc-functional-analysis" class="nav-link" data-scroll-target="#functional-analysis">Functional analysis</a>
-  <ul>
-  <li><a href="#interpro" id="toc-interpro" class="nav-link" data-scroll-target="#interpro">InterPro</a></li>
-  <li><a href="#go-terms" id="toc-go-terms" class="nav-link" data-scroll-target="#go-terms">GO Terms</a></li>
-  <li><a href="#pfam" id="toc-pfam" class="nav-link" data-scroll-target="#pfam">Pfam</a></li>
-  <li><a href="#ko" id="toc-ko" class="nav-link" data-scroll-target="#ko">KO</a></li>
-  </ul></li>
+  <ul class="collapse">
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">Quality Control</a></li>
+  <li><a href="#taxonomic-analysis" id="toc-taxonomic-analysis" class="nav-link" data-scroll-target="#taxonomic-analysis">Taxonomic analysis</a></li>
+  <li><a href="#functional-analysis" id="toc-functional-analysis" class="nav-link" data-scroll-target="#functional-analysis">Functional analysis</a></li>
   <li><a href="#contig-viewer" id="toc-contig-viewer" class="nav-link" data-scroll-target="#contig-viewer">Contig Viewer</a></li>
-  <li><a href="#pathwayssystems" id="toc-pathwayssystems" class="nav-link" data-scroll-target="#pathwayssystems">Pathways/Systems</a>
-  <ul>
-  <li><a href="#kegg-module" id="toc-kegg-module" class="nav-link" data-scroll-target="#kegg-module">KEGG Module</a></li>
-  <li><a href="#genome-properties" id="toc-genome-properties" class="nav-link" data-scroll-target="#genome-properties">Genome properties</a></li>
-  <li><a href="#antismash" id="toc-antismash" class="nav-link" data-scroll-target="#antismash">antiSMASH</a></li>
-  </ul></li>
+  <li><a href="#pathwayssystems" id="toc-pathwayssystems" class="nav-link" data-scroll-target="#pathwayssystems">Pathways/Systems</a></li>
   <li><a href="#kegg-pathway-visualisation" id="toc-kegg-pathway-visualisation" class="nav-link" data-scroll-target="#kegg-pathway-visualisation">Kegg pathway visualisation</a></li>
   </ul></li>
-  <li><a href="#genome-viz" id="toc-genome-viz" class="nav-link" data-scroll-target="#genome-viz">Genome Viz</a>
-  <ul>
-  <li><a href="#function-annotation" id="toc-function-annotation" class="nav-link" data-scroll-target="#function-annotation">Function Annotation</a></li>
-  <li><a href="#cog-analysis" id="toc-cog-analysis" class="nav-link" data-scroll-target="#cog-analysis">COG Analysis</a></li>
-  <li><a href="#kegg-class-analysis" id="toc-kegg-class-analysis" class="nav-link" data-scroll-target="#kegg-class-analysis">KEGG Class Analysis</a></li>
-  <li><a href="#kegg-module-analysis" id="toc-kegg-module-analysis" class="nav-link" data-scroll-target="#kegg-module-analysis">KEGG Module Analysis</a></li>
-  <li><a href="#taxonomic-tree" id="toc-taxonomic-tree" class="nav-link" data-scroll-target="#taxonomic-tree">Taxonomic Tree</a></li>
-  </ul></li>
+  <li><a href="#genome-viz" id="toc-genome-viz" class="nav-link" data-scroll-target="#genome-viz">Genome Viz</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 

@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/keywords.html</loc>
-    <lastmod>2023-06-25T18:01:09.056Z</lastmod>
+    <loc>https://amartyanambiar.github.io/gsoc-blog/index.html</loc>
+    <lastmod>2023-06-29T10:14:42.906Z</lastmod>
   </url>
   <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/commands.html</loc>
-    <lastmod>2023-06-25T18:01:09.596Z</lastmod>
+    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Pathway_Viz/PathwaysExplorer.html</loc>
+    <lastmod>2023-06-29T10:14:44.108Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Viz_Recon/index.html</loc>
-    <lastmod>2023-06-25T18:01:10.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Pathway_Viz/pathways_vis.html</loc>
-    <lastmod>2023-06-25T18:01:11.955Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Pathway_Viz/index.html</loc>
-    <lastmod>2023-06-25T18:01:13.053Z</lastmod>
+    <lastmod>2023-06-29T10:14:44.698Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/me.html</loc>
-    <lastmod>2023-06-25T18:01:13.476Z</lastmod>
+    <lastmod>2023-06-29T10:14:45.120Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/mentors.html</loc>
-    <lastmod>2023-06-25T18:01:13.938Z</lastmod>
+    <lastmod>2023-06-29T10:14:45.579Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/project.html</loc>
-    <lastmod>2023-06-25T18:01:14.433Z</lastmod>
+    <lastmod>2023-06-29T10:14:46.048Z</lastmod>
   </url>
   <url>
-    <loc>https://amartyanambiar.github.io/gsoc-blog/index.html</loc>
-    <lastmod>2023-06-25T18:01:15.178Z</lastmod>
+    <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/commands.html</loc>
+    <lastmod>2023-06-29T10:14:46.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/keywords.html</loc>
+    <lastmod>2023-06-29T10:14:47.052Z</lastmod>
   </url>
 </urlset>
