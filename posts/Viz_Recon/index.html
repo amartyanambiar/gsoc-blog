@@ -241,19 +241,47 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sample-viz" id="toc-sample-viz" class="nav-link active" data-scroll-target="#sample-viz">Sample Viz</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#map-of-sample-locations" id="toc-map-of-sample-locations" class="nav-link" data-scroll-target="#map-of-sample-locations">Map of sample locations</a></li>
   </ul></li>
   <li><a href="#analysis-viz" id="toc-analysis-viz" class="nav-link" data-scroll-target="#analysis-viz">Analysis Viz</a>
+  <ul>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">Quality Control</a>
   <ul class="collapse">
-  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control">Quality Control</a></li>
-  <li><a href="#taxonomic-analysis" id="toc-taxonomic-analysis" class="nav-link" data-scroll-target="#taxonomic-analysis">Taxonomic analysis</a></li>
-  <li><a href="#functional-analysis" id="toc-functional-analysis" class="nav-link" data-scroll-target="#functional-analysis">Functional analysis</a></li>
-  <li><a href="#contig-viewer" id="toc-contig-viewer" class="nav-link" data-scroll-target="#contig-viewer">Contig Viewer</a></li>
-  <li><a href="#pathwayssystems" id="toc-pathwayssystems" class="nav-link" data-scroll-target="#pathwayssystems">Pathways/Systems</a></li>
-  <li><a href="#kegg-pathway-visualization" id="toc-kegg-pathway-visualization" class="nav-link" data-scroll-target="#kegg-pathway-visualization">Kegg pathway Visualization</a></li>
+  <li><a href="#number-of-sequence-reads-per-qc-step" id="toc-number-of-sequence-reads-per-qc-step" class="nav-link" data-scroll-target="#number-of-sequence-reads-per-qc-step"><u>Number of Sequence Reads per QC step</u></a></li>
+  <li><a href="#read-length-read-gc-distribution" id="toc-read-length-read-gc-distribution" class="nav-link" data-scroll-target="#read-length-read-gc-distribution"><u>Read Length &amp; Read GC Distribution</u></a></li>
+  <li><a href="#nucleotide-position-histogram" id="toc-nucleotide-position-histogram" class="nav-link" data-scroll-target="#nucleotide-position-histogram"><u>Nucleotide Position Histogram</u></a></li>
   </ul></li>
-  <li><a href="#genome-viz" id="toc-genome-viz" class="nav-link" data-scroll-target="#genome-viz">Genome Viz</a></li>
+  <li><a href="#taxonomic-analysis" id="toc-taxonomic-analysis" class="nav-link" data-scroll-target="#taxonomic-analysis">Taxonomic analysis</a>
+  <ul class="collapse">
+  <li><a href="#krona" id="toc-krona" class="nav-link" data-scroll-target="#krona"><u>Krona</u></a></li>
+  <li><a href="#domain-composition" id="toc-domain-composition" class="nav-link" data-scroll-target="#domain-composition"><u>Domain Composition</u></a></li>
+  <li><a href="#phylum-composition" id="toc-phylum-composition" class="nav-link" data-scroll-target="#phylum-composition"><u>Phylum Composition</u></a></li>
+  </ul></li>
+  <li><a href="#functional-analysis" id="toc-functional-analysis" class="nav-link" data-scroll-target="#functional-analysis">Functional analysis</a>
+  <ul class="collapse">
+  <li><a href="#interpro" id="toc-interpro" class="nav-link" data-scroll-target="#interpro"><u>InterPro</u></a></li>
+  <li><a href="#go-terms" id="toc-go-terms" class="nav-link" data-scroll-target="#go-terms"><u>GO Terms</u></a></li>
+  <li><a href="#pfam" id="toc-pfam" class="nav-link" data-scroll-target="#pfam"><u>Pfam</u></a></li>
+  <li><a href="#ko" id="toc-ko" class="nav-link" data-scroll-target="#ko"><u>KO</u></a></li>
+  </ul></li>
+  <li><a href="#contig-viewer" id="toc-contig-viewer" class="nav-link" data-scroll-target="#contig-viewer">Contig Viewer</a></li>
+  <li><a href="#pathwayssystems" id="toc-pathwayssystems" class="nav-link" data-scroll-target="#pathwayssystems">Pathways/Systems</a>
+  <ul class="collapse">
+  <li><a href="#kegg-module" id="toc-kegg-module" class="nav-link" data-scroll-target="#kegg-module"><u>KEGG Module</u></a></li>
+  <li><a href="#genome-properties" id="toc-genome-properties" class="nav-link" data-scroll-target="#genome-properties"><u>Genome properties</u></a></li>
+  <li><a href="#antismash" id="toc-antismash" class="nav-link" data-scroll-target="#antismash"><u>antiSMASH</u></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#genome-viz" id="toc-genome-viz" class="nav-link" data-scroll-target="#genome-viz">Genome Viz</a>
+  <ul>
+  <li><a href="#browse-genome" id="toc-browse-genome" class="nav-link" data-scroll-target="#browse-genome"><u>Browse genome</u></a></li>
+  <li><a href="#cog-analysis" id="toc-cog-analysis" class="nav-link" data-scroll-target="#cog-analysis"><u>COG Analysis</u></a></li>
+  <li><a href="#kegg-class-analysis" id="toc-kegg-class-analysis" class="nav-link" data-scroll-target="#kegg-class-analysis"><u>KEGG Class Analysis</u></a></li>
+  <li><a href="#kegg-module-analysis" id="toc-kegg-module-analysis" class="nav-link" data-scroll-target="#kegg-module-analysis"><u>KEGG Module Analysis</u></a></li>
+  <li><a href="#taxonomy-tree" id="toc-taxonomy-tree" class="nav-link" data-scroll-target="#taxonomy-tree"><u>Taxonomy Tree</u></a></li>
+  </ul></li>
+  <li><a href="#kegg-pathway-visualization" id="toc-kegg-pathway-visualization" class="nav-link" data-scroll-target="#kegg-pathway-visualization">Kegg pathway Visualization</a></li>
   </ul>
 </nav>
     </div>
@@ -285,17 +313,17 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Dataset:</strong> Accessed through Analyses Accession ID - Summary</p>
 <section id="number-of-sequence-reads-per-qc-step" class="level4">
-<h4 class="anchored" data-anchor-id="number-of-sequence-reads-per-qc-step">Number of Sequence Reads per QC step</h4>
+<h4 class="anchored" data-anchor-id="number-of-sequence-reads-per-qc-step"><u>Number of Sequence Reads per QC step</u></h4>
 <p><strong>What it shows:</strong> Number of reads which pass the quality control steps in the pipeline.</p>
 <p><strong>Visualization type:</strong> Normal X-axis Charts</p>
 </section>
 <section id="read-length-read-gc-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="read-length-read-gc-distribution">Read Length &amp; Read GC Distribution</h4>
+<h4 class="anchored" data-anchor-id="read-length-read-gc-distribution"><u>Read Length &amp; Read GC Distribution</u></h4>
 <p><strong>What it shows:</strong> Histograms showing distributions of sequence lengths and percentage GC content for the sequences having passed quality control.</p>
 <p><strong>Visualization type:</strong> Histogram</p>
 </section>
 <section id="nucleotide-position-histogram" class="level4">
-<h4 class="anchored" data-anchor-id="nucleotide-position-histogram">Nucleotide Position Histogram</h4>
+<h4 class="anchored" data-anchor-id="nucleotide-position-histogram"><u>Nucleotide Position Histogram</u></h4>
 <p><strong>What it shows:</strong> Shows the relative abundance of nucleotides (A, C, G, T, or ambiguous base "N") at each position starting from the beginning of each read up to the first 500 base pairs.</p>
 <p><strong>Visualization type:</strong> Histogram</p>
 <p><strong>Dataset:</strong> Accessed through Analyses Accession ID - nucleotide-distribution</p>
@@ -306,20 +334,20 @@ ul.task-list li input[type="checkbox"] {
 <p>Results from the taxonomic analysis steps of the pipeline.</p>
 <p><strong>Example URL:</strong> <a href="https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic"><u>https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic</u></a></p>
 <section id="krona" class="level4">
-<h4 class="anchored" data-anchor-id="krona">Krona</h4>
+<h4 class="anchored" data-anchor-id="krona"><u>Krona</u></h4>
 <p><strong>What it shows:</strong> Interactive Krona to visualise the taxa hierarchy</p>
 <p><strong>Technology used:</strong> <a href="https://github.com/marbl/Krona/wiki"><u>https://github.com/marbl/Krona/wiki</u></a></p>
 <p><strong>Visualization type:</strong> Krona</p>
 <p><strong>Dataset:</strong> Accessed through Analyses Accession ID - krona${taxResults}</p>
 </section>
 <section id="domain-composition" class="level4">
-<h4 class="anchored" data-anchor-id="domain-composition">Domain Composition</h4>
+<h4 class="anchored" data-anchor-id="domain-composition"><u>Domain Composition</u></h4>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> Pie, Column</p>
 <p><strong>Dataset:</strong> Accessed through Analysis Accession ID - taxonomy</p>
 </section>
 <section id="phylum-composition" class="level4">
-<h4 class="anchored" data-anchor-id="phylum-composition">Phylum Composition</h4>
+<h4 class="anchored" data-anchor-id="phylum-composition"><u>Phylum Composition</u></h4>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> Pie, Column, Stacked Column</p>
 <p><strong>Dataset:</strong> Accessed through Analysis Accession ID - taxonomy</p>
@@ -330,25 +358,25 @@ ul.task-list li input[type="checkbox"] {
 <p>Charts present the functional analysis outputs of the pipeline, which focus on InterPro, Pfam, KEGG orthologue and GO term annotations. These summarise the functional content of the sequences in the sample.</p>
 <p><strong>Example URL:</strong> <a href="https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional"><u>https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional</u></a></p>
 <section id="interpro" class="level4">
-<h4 class="anchored" data-anchor-id="interpro">InterPro</h4>
+<h4 class="anchored" data-anchor-id="interpro"><u>InterPro</u></h4>
 <p><strong>What it shows:</strong> Shows Sequence feature summary &amp; InterPro Summary</p>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> X-axis Chart, Pie</p>
 </section>
 <section id="go-terms" class="level4">
-<h4 class="anchored" data-anchor-id="go-terms">GO Terms</h4>
+<h4 class="anchored" data-anchor-id="go-terms"><u>GO Terms</u></h4>
 <p><strong>What it shows:</strong> A summary of Gene Ontology (GO) terms derived from InterPro matches to the sample is provided in the charts below.</p>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> Bar, Pie</p>
 </section>
 <section id="pfam" class="level4">
-<h4 class="anchored" data-anchor-id="pfam">Pfam</h4>
+<h4 class="anchored" data-anchor-id="pfam"><u>Pfam</u></h4>
 <p><strong>What it shows:</strong> Top 10 Pfam entries</p>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> Bar</p>
 </section>
 <section id="ko" class="level4">
-<h4 class="anchored" data-anchor-id="ko">KO</h4>
+<h4 class="anchored" data-anchor-id="ko"><u>KO</u></h4>
 <p><strong>What it shows:</strong> Top 10 KO entries</p>
 <p><strong>Technology used:</strong> Highcharts</p>
 <p><strong>Visualization type:</strong> Bar</p>
@@ -365,45 +393,79 @@ ul.task-list li input[type="checkbox"] {
 <section id="pathwayssystems" class="level2">
 <h2 class="anchored" data-anchor-id="pathwayssystems">Pathways/Systems</h2>
 <p>Results from the biochemical pathways and systems predictions steps of the pipeline.</p>
+<p><strong>Example URL:</strong> <a href="https://www.ebi.ac.uk/metagenomics/analyses/MGYA00572069#path-systems">https://www.ebi.ac.uk/metagenomics/analyses/MGYA00572069#path-systems</a></p>
 <section id="kegg-module" class="level4">
-<h4 class="anchored" data-anchor-id="kegg-module">KEGG Module</h4>
+<h4 class="anchored" data-anchor-id="kegg-module"><u>KEGG Module</u></h4>
+<p><strong>What it shows:</strong> Modules vs Completeness</p>
+<p><strong>Dataset:</strong> <code>analyses/${overviewData.id}/kegg-modules</code></p>
+<p><strong>Visualization type:</strong> Bar Chart</p>
+<p><strong>Technology used:</strong> Highcharts</p>
 </section>
 <section id="genome-properties" class="level4">
-<h4 class="anchored" data-anchor-id="genome-properties">Genome properties</h4>
+<h4 class="anchored" data-anchor-id="genome-properties"><u>Genome properties</u></h4>
+<p><strong>What it shows:</strong> Hierarchical structure of Genome Properties</p>
+<p><strong>Dataset:</strong> <code>analyses/${overviewData.id}/genome-properties</code></p>
+<p><strong>Visualization type:</strong> Hierarchy tree</p>
+<p><strong>Technology used:</strong> <a href="https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/db0402d572863358a9aab20136a2e9713a31fb2d/src/components/UI/Hierarchy/index.tsx">HierarchyNode</a></p>
 </section>
 <section id="antismash" class="level4">
-<h4 class="anchored" data-anchor-id="antismash">antiSMASH</h4>
+<h4 class="anchored" data-anchor-id="antismash"><u>antiSMASH</u></h4>
+<p><strong>What it shows:</strong> Displays top 10 antiSMASH gene clusters</p>
+<p><strong>Dataset:</strong> <code>analyses/${overviewData.id}/antismash-gene-clusters</code></p>
+<p><strong>Visualization type:</strong> Bar Chart</p>
+<p><strong>Technology used:</strong> Highcharts</p>
 </section>
-</section>
-<section id="kegg-pathway-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="kegg-pathway-visualization">Kegg pathway Visualization</h2>
-<p><strong>Example URL:</strong> <a href="https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb"><u>https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb</u></a> (not yet live)</p>
-<p><strong>What it shows:</strong> completeness of KEGG pathways for a sample</p>
-<p><strong>Dataset:</strong> combination of an MGYA Kegg Module list and a Pathway from KEGG API</p>
-<p><strong>Visualization type:</strong> pathway network</p>
-<p><strong>Technology used:</strong> pathviz R package</p>
 </section>
 </section>
 <section id="genome-viz" class="level1">
 <h1>Genome Viz</h1>
-<section id="function-annotation" class="level4">
-<h4 class="anchored" data-anchor-id="function-annotation">Function Annotation</h4>
+<p><strong>Example URL:</strong> <a href="https://www.ebi.ac.uk/metagenomics/genomes/MGYG000320984#genome-browser">https://www.ebi.ac.uk/metagenomics/genomes/MGYG000320984#genome-browser</a></p>
+<section id="browse-genome" class="level4">
+<h4 class="anchored" data-anchor-id="browse-genome"><u>Browse genome</u></h4>
+<p><strong>What it shows:</strong> A container with IGV genome browser, also allows selection of feature types</p>
+<p><strong>Dataset:</strong> General feature format : <code>${accession}.gff</code>, fasta : <code>${accession}.fna</code></p>
+<p><strong>Visualization type:</strong> Genome browser + Functional Annotation</p>
+<p><strong>Technology used:</strong> IGV</p>
 </section>
 <section id="cog-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="cog-analysis">COG Analysis</h4>
+<h4 class="anchored" data-anchor-id="cog-analysis"><u>COG Analysis</u></h4>
+<p><strong>What it shows:</strong> Displays Top 10 COG Categories</p>
+<p><strong>Dataset:</strong> <code>${accession}/cogs</code></p>
+<p><strong>Visualization type:</strong> Bar Chart</p>
+<p><strong>Technology used:</strong> Highcharts</p>
 </section>
 <section id="kegg-class-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="kegg-class-analysis">KEGG Class Analysis</h4>
+<h4 class="anchored" data-anchor-id="kegg-class-analysis"><u>KEGG Class Analysis</u></h4>
+<p><strong>What it shows:</strong> Displays Top 10 KEGG brite Categories</p>
+<p><strong>Dataset:</strong> <code>${accession}/kegg-class</code></p>
+<p><strong>Visualization type:</strong> Bar Chart</p>
+<p><strong>Technology used:</strong> Highcharts</p>
 </section>
 <section id="kegg-module-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="kegg-module-analysis">KEGG Module Analysis</h4>
+<h4 class="anchored" data-anchor-id="kegg-module-analysis"><u>KEGG Module Analysis</u></h4>
+<p><strong>What it shows:</strong> Displays Top 10 KEGG module Categories</p>
+<p><strong>Dataset:</strong> <code>${accession}/kegg-module</code></p>
+<p><strong>Visualization type:</strong> Bar Chart</p>
+<p><strong>Technology used:</strong> Highcharts</p>
 </section>
-<section id="taxonomic-tree" class="level4">
-<h4 class="anchored" data-anchor-id="taxonomic-tree">Taxonomic Tree</h4>
+<section id="taxonomy-tree" class="level4">
+<h4 class="anchored" data-anchor-id="taxonomy-tree"><u>Taxonomy Tree</u></h4>
+<p><strong>Example URL:</strong> <a href="https://www.ebi.ac.uk/metagenomics/genome-catalogues/chicken-gut-v1-0#phylo-tab">https://www.ebi.ac.uk/metagenomics/genome-catalogues/chicken-gut-v1-0#phylo-tab</a></p>
+<p><strong>What it shows:</strong> Phylogenetic Tree</p>
+<p><strong>Dataset:</strong> phylo_tree.json</p>
+<p><strong>Visualization type:</strong> <a href="https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/db0402d572863358a9aab20136a2e9713a31fb2d/src/components/UI/Hierarchy/index.tsx">HierarchyNode</a></p>
+</section>
+</section>
+<section id="kegg-pathway-visualization" class="level1">
+<h1>Kegg pathway Visualization</h1>
+<p><strong>Example URL:</strong> <a href="https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb"><u>https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb</u></a> (not yet live)</p>
+<p><strong>What it shows:</strong> completeness of KEGG pathways for a sample</p>
+<p><strong>Dataset:</strong> combination of an MGYA Kegg Module list and a Pathway from KEGG API</p>
+<p><strong>Visualization type:</strong> pathway network</p>
+<p><strong>Technology used:</strong> pathview R package</p>
 <!-- ![](mgnify.png) -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

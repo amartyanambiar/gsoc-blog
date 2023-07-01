@@ -81,14 +81,7 @@
     "href": "posts/Viz_Recon/index.html#pathwayssystems",
     "title": "MGnify Visualization Recon",
     "section": "Pathways/Systems",
-    "text": "Pathways/Systems\nResults from the biochemical pathways and systems predictions steps of the pipeline.\n\nKEGG Module\n\n\nGenome properties\n\n\nantiSMASH"
-  },
-  {
-    "objectID": "posts/Viz_Recon/index.html#kegg-pathway-visualization",
-    "href": "posts/Viz_Recon/index.html#kegg-pathway-visualization",
-    "title": "MGnify Visualization Recon",
-    "section": "Kegg pathway Visualization",
-    "text": "Kegg pathway Visualization\nExample URL: https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb (not yet live)\nWhat it shows: completeness of KEGG pathways for a sample\nDataset: combination of an MGYA Kegg Module list and a Pathway from KEGG API\nVisualization type: pathway network\nTechnology used: pathviz R package"
+    "text": "Pathways/Systems\nResults from the biochemical pathways and systems predictions steps of the pipeline.\nExample URL: https://www.ebi.ac.uk/metagenomics/analyses/MGYA00572069#path-systems\n\nKEGG Module\nWhat it shows: Modules vs Completeness\nDataset: analyses/${overviewData.id}/kegg-modules\nVisualization type: Bar Chart\nTechnology used: Highcharts\n\n\nGenome properties\nWhat it shows: Hierarchical structure of Genome Properties\nDataset: analyses/${overviewData.id}/genome-properties\nVisualization type: Hierarchy tree\nTechnology used: HierarchyNode\n\n\nantiSMASH\nWhat it shows: Displays top 10 antiSMASH gene clusters\nDataset: analyses/${overviewData.id}/antismash-gene-clusters\nVisualization type: Bar Chart\nTechnology used: Highcharts"
   },
   {
     "objectID": "src/notebooks/PathwaysExplorer.html#contents",
