@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On this R Notebook</h2>
    
   <ul>
   <li><a href="#pathways-visualization" id="toc-pathways-visualization" class="nav-link active" data-scroll-target="#pathways-visualization">Pathways Visualization</a>
@@ -252,8 +252,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#resources-and-documentation" id="toc-resources-and-documentation" class="nav-link" data-scroll-target="#resources-and-documentation">Resources and Documentation</a><a id="part2" class="nav-link" data-scroll-target="undefined"></a>
   <ul class="collapse">
-  <li><a href="#pathview" id="toc-pathview" class="nav-link" data-scroll-target="#pathview"><strong>Pathview </strong>:</a></li>
-  <li><a href="#keggrest" id="toc-keggrest" class="nav-link" data-scroll-target="#keggrest"><strong>KEGGREST</strong>:</a></li>
+  <li><a href="#mgnify" id="toc-mgnify" class="nav-link" data-scroll-target="#mgnify"><strong>MGnify</strong></a></li>
+  <li><a href="#pathview" id="toc-pathview" class="nav-link" data-scroll-target="#pathview"><strong>Pathview</strong></a></li>
+  <li><a href="#keggrest" id="toc-keggrest" class="nav-link" data-scroll-target="#keggrest"><strong>KEGGREST</strong></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -319,6 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><a href="#part2">Resources and Documentation</a></li>
 </ul>
+<blockquote class="blockquote">
 <p><strong>Libraries Used</strong></p>
 <ul>
 <li><strong>ALDEx2</strong> : Analyzing and comparing the abundance or occurrence of KEGG orthologs or modules within different samples or datasets.</li>
@@ -326,9 +328,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>KEGGREST</strong> : Allows accessing KEGG pathways.</li>
 <li><strong>MGnifyR</strong> : It wraps the MGnify API in R functions.</li>
 <li><strong>pathview</strong> : Used for visualizing and analyzing pathway data with gene or protein expression data overlaid.</li>
-<li><strong>variable_utils.r</strong> : Contains fucntion to retrieve variables from the environment &amp; user input.</li>
-<li><strong>kegg_pathways_utils.r</strong> : Contains functions to fetch and process KEGG pathways.</li>
+<li><strong><a href="lib/variable_utils.r">variable_utils.r</a></strong> : Contains fucntion to retrieve variables from the environment &amp; user input.</li>
+<li><strong><a href="lib/kegg_pathways_utils.r">kegg_pathways_utils.r</a></strong> : Contains functions to fetch and process KEGG pathways.</li>
 </ul>
+</blockquote>
 <div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading libraries:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({</span>
@@ -382,7 +385,7 @@ Warning message:
 <div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting tables and figures size to display (these will be reset later):</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.matrix.max.cols=</span><span class="dv">150</span>, <span class="at">repr.matrix.max.rows=</span><span class="dv">500</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">4</span>, <span class="at">repr.plot.height=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">2</span>, <span class="at">repr.plot.height=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="drawing-presenceabsence-kos-for-one-metagenomic-sample" class="level2">
@@ -399,9 +402,11 @@ Warning message:
 [2] "Using MGYS00006178 as Study Accession"</code></pre>
 </div>
 </div>
+<blockquote class="blockquote">
 <ul>
 <li>Both the studies chosen by <a href="https://www.embl.org/people/person/alejandra-escobar-zepeda/">Alejandra Escobar</a> are related to the gut bacteria of honeybees.</li>
 </ul>
+</blockquote>
 <div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom Pathways Selection</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -523,11 +528,13 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pathways)</span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<blockquote class="blockquote">
 <ul>
 <li><strong>Input</strong> : List of Modules :: Output : List of Pathways</li>
 <li><strong>keggLink()</strong> is used to retrieve pathway info -&gt; <em>“pathway”</em>.</li>
 <li>Using <strong>grep</strong> to get the <em>pathway maps</em> specifically.</li>
 </ul>
+</blockquote>
 <ol type="1">
 <li>Now we need to collect the list of template pathways where these complete modules can be draw. This step takes less than 1 minute to run.</li>
 </ol>
@@ -718,15 +725,22 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 </section>
 <section id="resources-and-documentation" class="level2">
 <h2 class="anchored" data-anchor-id="resources-and-documentation">Resources and Documentation<a id="part2"></a></h2><a id="part2">
-</a><section id="pathview" class="level4"><a id="part2">
-<h4 class="anchored" data-anchor-id="pathview"><strong>Pathview </strong>:</h4>
+</a><section id="mgnify" class="level4"><a id="part2">
+<h4 class="anchored" data-anchor-id="mgnify"><strong>MGnify</strong></h4>
 </a><ul><a id="part2">
+</a><li><a id="part2"></a><a href="https://docs.mgnify.org/src/docs/analysis.html#assembly-analysis-pipeline">https://docs.mgnify.org/src/docs/analysis.html#assembly-analysis-pipeline</a> - Description of the latest MGnify analysis pipeline and the tools it uses.</li>
+<li><a href="https://academic.oup.com/nar/article/48/D1/D570/5614179">https://academic.oup.com/nar/article/48/D1/D570/5614179</a> - This paper highlights the platform’s functionalities for metagenomic data assembly and analysis. It also describes he implementation of KEGG modules in MGnify.</li>
+</ul>
+</section>
+<section id="pathview" class="level4">
+<h4 class="anchored" data-anchor-id="pathview"><strong>Pathview</strong></h4>
+<ul>
 <li>The official documentation for Pathview, a tool for pathway-based data integration and visualization. It provides an overview of the tool and explains how to use it effectively.</li>
-</a><li><a id="part2">You can find more information at </a><a href="https://pathview.uncc.edu/overview#kegg_view">https://pathview.uncc.edu/overview#kegg_view</a> .</li>
+<li>You can find more information at <a href="https://pathview.uncc.edu/overview#kegg_view">https://pathview.uncc.edu/overview#kegg_view</a> .</li>
 </ul>
 </section>
 <section id="keggrest" class="level4">
-<h4 class="anchored" data-anchor-id="keggrest"><strong>KEGGREST</strong>:</h4>
+<h4 class="anchored" data-anchor-id="keggrest"><strong>KEGGREST</strong></h4>
 <ul>
 <li>KEGGREST is a Bioconductor package that provides programmatic access to the KEGG database.</li>
 <li>More about KEGGREST at <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html">http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html</a> .</li>
