@@ -320,8 +320,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><a href="#part2">Resources and Documentation</a></li>
 </ul>
-<blockquote class="blockquote">
-<p><strong>Libraries Used</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Libraries Used
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><strong>ALDEx2</strong> : Analyzing and comparing the abundance or occurrence of KEGG orthologs or modules within different samples or datasets.</li>
 <li><strong>data.table</strong>, <strong>dplyr</strong> : Used for data manipulation and transformation.</li>
@@ -331,8 +339,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><a href="lib/variable_utils.r">variable_utils.r</a></strong> : Contains fucntion to retrieve variables from the environment &amp; user input.</li>
 <li><strong><a href="lib/kegg_pathways_utils.r">kegg_pathways_utils.r</a></strong> : Contains functions to fetch and process KEGG pathways.</li>
 </ul>
-</blockquote>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="1">
+</div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading libraries:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">library</span>(ALDEx2)</span>
@@ -348,57 +357,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"lib/variable_utils.r"</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"lib/kegg_pathways_utils.r"</span>)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">display_markdown</span>(<span class="at">file =</span> <span class="st">'../_resources/mgnifyr_help.md'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning message:
-“package ‘MASS’ was built under R version 4.2.3”
-Warning message:
-“package ‘truncnorm’ was built under R version 4.2.3”
-Warning message:
-“package ‘dplyr’ was built under R version 4.2.3”</code></pre>
-</div>
-<section id="help-with-mgnifyr" class="level1 cell-output cell-output-display">
-<h1>Help with MGnifyR</h1>
-<p>MGnifyR is an R package that provides a convenient way for R users to access data from <a href="https://www.ebi.ac.uk/metagenomics/api/">the MGnify API</a>.</p>
-<p>Detailed help for each function is available in R using the standard <code>?function_name</code> command (i.e.&nbsp;typing <code>?mgnify_query</code> will bring up built-in help for the mgnify_query command).</p>
-<p>A vignette is available containing a reasonably verbose overview of the main functionality. This can be read either within R with the <code>vignette("MGnifyR")</code> command, or <a href="https://htmlpreview.github.io/?https://github.com/beadyallen/MGnifyR/blob/master/doc/MGnifyR.html">in the development repository</a></p>
-<section id="mgnifyr-command-cheat-sheet" class="level2">
-<h2 class="anchored" data-anchor-id="mgnifyr-command-cheat-sheet">MGnifyR Command cheat sheet</h2>
-<p>The following list of key functions should give a starting point for finding relevent documentation.</p>
-<ul>
-<li><code>mgnify_client()</code> : Create the client object required for all other functions.</li>
-<li><code>mgnify_query()</code> : Search the whole MGnify database.</li>
-<li><code>mgnify_analyses_from_xxx()</code> : Convert xxx accessions to analyses accessions. xxx is either samples or studies.</li>
-<li><code>mgnify_get_analyses_metadata()</code> : Retrieve all study, sample and analysis metadata for given analyses.</li>
-<li><code>mgnify_get_analyses_phyloseq()</code> : Convert abundance, taxonomic, and sample metadata into a single phyloseq object.</li>
-<li><code>mgnify_get_analyses_results()</code> : Get functional annotation results for a set of analyses.</li>
-<li><code>mgnify_download()</code> : Download raw results files from MGnify.</li>
-<li><code>mgnify_retrieve_json()</code> : Low level API access helper function.</li>
-</ul>
-</section>
-</section>
-</div>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create your session mgnify_client object</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mg <span class="ot">=</span> <span class="fu">mgnify_client</span>(<span class="at">usecache =</span> T, <span class="at">cache_dir =</span> <span class="st">'/home/jovyan/.mgnify_cache'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># display_markdown(file = '../_resources/mgnifyr_help.md')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting tables and figures size to display (these will be reset later):</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.matrix.max.cols=</span><span class="dv">150</span>, <span class="at">repr.matrix.max.rows=</span><span class="dv">500</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">2</span>, <span class="at">repr.plot.height=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create your session mgnify_client object</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mg <span class="ot">=</span> <span class="fu">mgnify_client</span>(<span class="at">usecache =</span> T, <span class="at">cache_dir =</span> <span class="st">'/home/jovyan/.mgnify_cache'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting tables and figures size to display (these will be reset later):</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.matrix.max.cols=</span><span class="dv">150</span>, <span class="at">repr.matrix.max.rows=</span><span class="dv">500</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">2</span>, <span class="at">repr.plot.height=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="drawing-presenceabsence-kos-for-one-metagenomic-sample" class="level2">
 <h2 class="anchored" data-anchor-id="drawing-presenceabsence-kos-for-one-metagenomic-sample">Drawing presence/absence KOs for one metagenomic sample <a id="part1"></a></h2><a id="part1">
 </a><section id="fetching-data-from-mgnify-pathways-selection" class="level3"><a id="part1">
 </a><h3 class="anchored" data-anchor-id="fetching-data-from-mgnify-pathways-selection"><a id="part1">1.1. Fetching data from MGnify &amp; Pathways Selection </a><a id="part1_1"></a></h3><a id="part1_1">
-</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="4"><a id="part1_1">
-</a><div class="sourceCode cell-code" id="cb5"><a id="part1_1"></a><pre class="sourceCode r code-with-copy"><a id="part1_1"><code class="sourceCode r"><span id="cb5-1"></span></code></a><code class="sourceCode r"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>PATHWAY_STUDY_IDS <span class="ot">&lt;-</span> <span class="fu">get_variable_from_link_or_input</span>(<span class="st">'PATHWAY_STUDY_IDS'</span>, <span class="at">name =</span>  <span class="st">'Study Accession'</span>, <span class="at">default =</span> <span class="st">'MGYS00006180,MGYS00006178'</span>)
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>PATHWAY_STUDY_IDS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">strsplit</span>(PATHWAY_STUDY_IDS, <span class="st">","</span>)[[<span class="dv">1</span>]])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Using"</span>, PATHWAY_STUDY_IDS, <span class="st">"as Study Accession"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="5"><a id="part1_1">
+</a><div class="sourceCode cell-code" id="cb4"><a id="part1_1"></a><pre class="sourceCode r code-with-copy"><a id="part1_1"><code class="sourceCode r"><span id="cb4-1"></span></code></a><code class="sourceCode r"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>PATHWAY_STUDY_IDS <span class="ot">&lt;-</span> <span class="fu">get_variable_from_link_or_input</span>(<span class="st">'PATHWAY_STUDY_IDS'</span>, <span class="at">name =</span>  <span class="st">'Study Accession'</span>, <span class="at">default =</span> <span class="st">'MGYS00006180,MGYS00006178'</span>)
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>PATHWAY_STUDY_IDS <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">strsplit</span>(PATHWAY_STUDY_IDS, <span class="st">","</span>)[[<span class="dv">1</span>]])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Using"</span>, PATHWAY_STUDY_IDS, <span class="st">"as Study Accession"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Type a Study Accession [default: MGYS00006180,MGYS00006178] </code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Using Study Accession = MGYS00006180,MGYS00006178 from the link you followed.
-[1] "Using MGYS00006180 as Study Accession"
+<pre><code>[1] "Using MGYS00006180 as Study Accession"
 [2] "Using MGYS00006178 as Study Accession"</code></pre>
 </div>
 </div>
@@ -407,7 +390,7 @@ Warning message:
 <li>Both the studies chosen by <a href="https://www.embl.org/people/person/alejandra-escobar-zepeda/">Alejandra Escobar</a> are related to the gut bacteria of honeybees.</li>
 </ul>
 </blockquote>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="5">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom Pathways Selection</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Most general pathways include</span></span>
@@ -423,8 +406,8 @@ Warning message:
 <li><p>To add custom pathways, input pathway numbers (ex: 00053,01220)</p></li>
 </ul>
 </section>
-<div class="cell-output cell-output-stdout">
-<pre><code>Using Pathways Accession = G from the link you followed.</code></pre>
+<div class="cell-output cell-output-stdin">
+<pre><code>Type a Pathways Accession [default: ] G</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -441,20 +424,33 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <ol type="1">
 <li>Fetching the analysis accession list using the study accessions.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="6">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">capture.output</span>({</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  all_accessions <span class="ot">&lt;-</span> <span class="fu">mgnify_analyses_from_studies</span>(mg, PATHWAY_STUDY_IDS)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  all_metadata <span class="ot">&lt;-</span> <span class="fu">mgnify_get_analyses_metadata</span>(mg, all_accessions)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Clearing the Noise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using <code>capture.output</code> to capture the noise being generated that would cause undesired ouputs in the quarto rendered notebook.</p>
+</div>
+</div>
 <ol start="2" type="1">
 <li>Keeping just the first analysis accession to fetch the kegg orthologs count table from the MGnify API and transform from JSON to matrix.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="7">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>accession <span class="ot">=</span> <span class="fu">head</span>(all_accessions, <span class="dv">1</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ko_loc <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">'analyses/'</span>,accession,<span class="st">'/kegg-orthologs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="8">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ko_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> ko_loc)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ko_data <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_json <span class="sc">%&gt;%</span> spread_all)[ , <span class="fu">c</span>(<span class="st">"attributes.accession"</span>, <span class="st">"attributes.count"</span>)]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ko_data <span class="ot">=</span> <span class="fu">data.frame</span>(ko_data, <span class="at">row.names=</span><span class="dv">1</span>)</span>
@@ -490,7 +486,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <ol start="3" type="1">
 <li>Fetch the modules completeness table and filter out completeness &lt; 100%.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="9">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>comp_loc <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">'analyses/'</span>,accession,<span class="st">'/kegg-modules'</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ko_comp_json <span class="ot">=</span> <span class="fu">mgnify_retrieve_json</span>(mg, <span class="at">path =</span> comp_loc)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ko_comp <span class="ot">=</span> <span class="fu">as.data.frame</span>(ko_comp_json <span class="sc">%&gt;%</span> spread_all)</span>
@@ -509,7 +505,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 </section>
 <section id="selecting-the-most-complete-pathways" class="level3">
 <h3 class="anchored" data-anchor-id="selecting-the-most-complete-pathways">1.2. Selecting the most complete pathways <a id="part1_2"></a></h3><a id="part1_2">
-</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="10"><a id="part1_2">
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="11"><a id="part1_2">
 </a><div class="sourceCode cell-code" id="cb14"><a id="part1_2"></a><pre class="sourceCode r code-with-copy"><a id="part1_2"><code class="sourceCode r"><span id="cb14-1"></span></code></a><code class="sourceCode r"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting up function that collects KEGG pathways for a given list of IDs, excluding chemical structure &amp; global maps</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>collect_pathways <span class="ot">&lt;-</span> <span class="cf">function</span>(ids_list) {</span>
@@ -528,17 +524,27 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pathways)</span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Collecting pathways
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><strong>Input</strong> : List of Modules :: Output : List of Pathways</li>
 <li><strong>keggLink()</strong> is used to retrieve pathway info -&gt; <em>“pathway”</em>.</li>
 <li>Using <strong>grep</strong> to get the <em>pathway maps</em> specifically.</li>
 </ul>
-</blockquote>
+</div>
+</div>
 <ol type="1">
 <li>Now we need to collect the list of template pathways where these complete modules can be draw. This step takes less than 1 minute to run.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="11">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>md_pathways <span class="ot">=</span> <span class="fu">collect_pathways</span>(modules)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(md_pathways)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -555,7 +561,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <ol start="2" type="1">
 <li>In order to draw the most complete pathways maps, we will use the list of templates we obtained in the previous step and select only pathways having all their constituent modules.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="12">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counting the number of modules we have in each pathway</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>our_pathways_counts <span class="ot">=</span> <span class="fu">list</span>()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (path_element <span class="cf">in</span> md_pathways) {</span>
@@ -595,7 +601,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="13">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing name of the pathways to be drawn</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pathway <span class="cf">in</span> to_draw){</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">display_markdown</span>(<span class="fu">paste</span>(pathway, <span class="st">"--&gt; "</span>, <span class="fu">get_pathway_info</span>(pathway)[<span class="dv">1</span>],<span class="st">" : "</span>,<span class="fu">get_pathway_info</span>(pathway)[<span class="dv">2</span>], <span class="at">sep=</span><span class="st">" "</span>))</span>
@@ -639,7 +645,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <li>As we are plotting absence/presence, we set the number of bins = 2, the scale in one direction, and use 1 as limit.</li>
 </ol>
 <p>Takes a couple of minutes depending on the number of pathways</p>
-</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="14"><a id="part1_3">
+</a><div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}"><a id="part1_3">
 </a><div class="sourceCode cell-code" id="cb18"><a id="part1_3"></a><pre class="sourceCode r code-with-copy"><a id="part1_3"><code class="sourceCode r"><span id="cb18-1"></span></code></a><code class="sourceCode r"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> to_draw) {</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pathview</span>(<span class="at">gene.data =</span> ko_matrix, </span>
@@ -657,7 +663,7 @@ Using 00190  -  Oxidative phosphorylation  :  https://www.kegg.jp/pathway/map001
 <ol start="2" type="1">
 <li>Clearing the current working directory and Displaying all the generated figures that are stored at the <code>pathway_plots/</code> directory.</li>
 </ol>
-<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="15">
+<div class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generatePathwayPlots</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p>Glycolysis / Gluconeogenesis</p>
