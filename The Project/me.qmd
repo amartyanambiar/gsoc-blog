@@ -3,9 +3,9 @@ title: "Me"
 author: "Amartya Nambiar"
 categories: ["About"]
 description:  ""
-title-block-banner: true
 ---
 
+---
 # Amartya Nambiar
 
 <h4>GSoC - 2023 Contributor</h4>
@@ -18,3 +18,4 @@ title-block-banner: true
 ![](images/my_pic.png){width=25%}
 :::
 
+<hr></hr>

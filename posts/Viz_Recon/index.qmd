@@ -4,7 +4,6 @@ author: "Amartya Nambiar"
 date: "2023-06-12"
 categories: [Visualization]
 description:  "Condensed list of Visualizations used in MGnify"
-title-block-banner: true
 ---
 
 
@@ -43,14 +42,14 @@ title-block-banner: true
 
 **Dataset:** Accessed through Analyses Accession ID - Summary
 
-#### Number of Sequence Reads per QC step 
+#### <u>Number of Sequence Reads per QC step</u> 
 
 **What it shows:** Number of reads which pass the quality control steps
 in the pipeline.
 
 **Visualization type:** Normal X-axis Charts
 
-#### Read Length & Read GC Distribution
+#### <u>Read Length & Read GC Distribution</u>
 
 **What it shows:** Histograms showing distributions of sequence lengths
 and percentage GC content for the sequences having passed quality
@@ -58,7 +57,7 @@ control.
 
 **Visualization type:** Histogram
 
-#### Nucleotide Position Histogram
+#### <u>Nucleotide Position Histogram</u>
 
 **What it shows:** Shows the relative abundance of nucleotides (A, C, G,
 T, or ambiguous base \"N\") at each position starting from the beginning
@@ -76,7 +75,7 @@ Results from the taxonomic analysis steps of the pipeline.
 **Example URL:**
 [[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#taxonomic)
 
-#### Krona
+#### <u>Krona</u>
 
 **What it shows:** Interactive Krona to visualise the taxa hierarchy
 
@@ -88,7 +87,7 @@ Results from the taxonomic analysis steps of the pipeline.
 **Dataset:** Accessed through Analyses Accession ID -
 krona\${taxResults}
 
-#### Domain Composition
+#### <u>Domain Composition</u>
 
 **Technology used:** Highcharts
 
@@ -96,7 +95,7 @@ krona\${taxResults}
 
 **Dataset:** Accessed through Analysis Accession ID - taxonomy
 
-#### Phylum Composition
+#### <u>Phylum Composition</u>
 
 **Technology used:** Highcharts
 
@@ -113,7 +112,7 @@ summarise the functional content of the sequences in the sample.
 **Example URL:**
 [[https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional]{.underline}](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00584637#functional)
 
-#### InterPro
+#### <u>InterPro</u>
 
 **What it shows:** Shows Sequence feature summary & InterPro Summary
 
@@ -121,7 +120,7 @@ summarise the functional content of the sequences in the sample.
 
 **Visualization type:** X-axis Chart, Pie
 
-#### GO Terms
+#### <u>GO Terms</u>
 
 **What it shows:** A summary of Gene Ontology (GO) terms derived from
 InterPro matches to the sample is provided in the charts below.
@@ -130,7 +129,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Visualization type:** Bar, Pie
 
-#### Pfam
+#### <u>Pfam</u>
 
 **What it shows:** Top 10 Pfam entries
 
@@ -138,7 +137,7 @@ InterPro matches to the sample is provided in the charts below.
 
 **Visualization type:** Bar
 
-#### KO
+#### <u>KO</u>
 
 **What it shows:** Top 10 KO entries
 
@@ -164,13 +163,91 @@ InterPro matches to the sample is provided in the charts below.
 Results from the biochemical pathways and systems predictions steps of
 the pipeline.
 
-#### KEGG Module
+**Example URL:** [https://www.ebi.ac.uk/metagenomics/analyses/MGYA00572069#path-systems](https://www.ebi.ac.uk/metagenomics/analyses/MGYA00572069#path-systems)
 
-#### Genome properties
+#### <u>KEGG Module</u>
+**What it shows:** Modules vs Completeness
 
-#### antiSMASH
+**Dataset:** `analyses/${overviewData.id}/kegg-modules`
 
-## Kegg pathway Visualization
+**Visualization type:** Bar Chart
+
+**Technology used:** Highcharts
+
+#### <u>Genome properties</u>
+**What it shows:** Hierarchical structure of Genome Properties
+
+**Dataset:** `analyses/${overviewData.id}/genome-properties`
+
+**Visualization type:** Hierarchy tree
+
+**Technology used:** [HierarchyNode](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/db0402d572863358a9aab20136a2e9713a31fb2d/src/components/UI/Hierarchy/index.tsx)
+
+#### <u>antiSMASH</u>
+**What it shows:** Displays top 10 antiSMASH gene clusters
+
+**Dataset:** `analyses/${overviewData.id}/antismash-gene-clusters`
+
+**Visualization type:** Bar Chart
+
+**Technology used:** Highcharts
+
+
+# Genome Viz
+**Example URL:** [https://www.ebi.ac.uk/metagenomics/genomes/MGYG000320984#genome-browser](https://www.ebi.ac.uk/metagenomics/genomes/MGYG000320984#genome-browser)
+
+#### <u>Browse genome</u>
+**What it shows:** A container with IGV genome browser, also allows selection of feature types
+
+**Dataset:** General feature format : `${accession}.gff`, fasta : `${accession}.fna`
+
+**Visualization type:** Genome browser + Functional Annotation
+
+**Technology used:** IGV
+
+
+#### <u>COG Analysis</u>
+**What it shows:** Displays Top 10 COG Categories
+
+**Dataset:** `${accession}/cogs`
+
+**Visualization type:** Bar Chart
+
+**Technology used:** Highcharts
+
+
+#### <u>KEGG Class Analysis</u>
+**What it shows:** Displays Top 10 KEGG brite Categories
+
+**Dataset:** `${accession}/kegg-class`
+
+**Visualization type:** Bar Chart
+
+**Technology used:** Highcharts
+
+
+#### <u>KEGG Module Analysis</u>
+**What it shows:** Displays Top 10 KEGG module Categories
+
+**Dataset:** `${accession}/kegg-module`
+
+**Visualization type:** Bar Chart
+
+**Technology used:** Highcharts
+
+
+#### <u>Taxonomy Tree</u>
+**Example URL:** [https://www.ebi.ac.uk/metagenomics/genome-catalogues/chicken-gut-v1-0#phylo-tab](https://www.ebi.ac.uk/metagenomics/genome-catalogues/chicken-gut-v1-0#phylo-tab)
+
+**What it shows:** Phylogenetic Tree
+
+**Dataset:** phylo_tree.json
+
+**Visualization type:** [HierarchyNode](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/db0402d572863358a9aab20136a2e9713a31fb2d/src/components/UI/Hierarchy/index.tsx) 
+
+---
+
+# Kegg pathway Visualization
 
 **Example URL:**
 [[https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb]{.underline}](https://github.com/EBI-Metagenomics/notebooks/blob/pathways_vis/src/notebooks/R%20Examples/pathways_vis.ipynb)
@@ -183,20 +260,6 @@ KEGG API
 
 **Visualization type:** pathway network
 
-**Technology used:** pathviz R package
-
-
-# Genome Viz
-
-#### Function Annotation
-
-#### COG Analysis
-
-#### KEGG Class Analysis
-
-#### KEGG Module Analysis
-
-#### Taxonomic Tree
-
+**Technology used:** pathview R package
 
 <!-- ![](mgnify.png) -->

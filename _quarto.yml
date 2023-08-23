@@ -6,10 +6,9 @@ project:
     - The Project
     - posts
     - src/notebooks/PathwaysExplorer.ipynb
-  
+   
 website:
   title: "GSoC - 23 : The MGnify Project"
-  
   navbar:
     right:
       # - icon: info-circle-fill
@@ -47,6 +46,7 @@ format:
             - cosmo
             - styles.scss
     toc: true
+    toc-depth: 4
     code-overflow: wrap
     # grid:
     #   body-width: 1000px

@@ -1,0 +1,18 @@
+---
+title: "GSoC - 2023 : Wrapped"
+author: "Amartya Nambiar"
+categories: ["Evals","Report"]
+date: "08-24-2023"
+description:  "Final Report - Comprehensive Summary of my Contributions"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+---
+
+<div style="text-align:center">
+![](gsoc+ebi_logo.png){fig-align="center"}
+</div>
+---
+

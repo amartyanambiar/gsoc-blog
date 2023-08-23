@@ -1,0 +1,17 @@
+---
+title: "VegaLite & Altair : An Anecdote"
+author: "Amartya Nambiar"
+categories: ["Vega","Visualization"]
+date: "08-10-2023"
+description:  "Key resources and insights gathered while working with Vegalite and Altair."
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+::: {style="width:70%;"}
+![](vegalite+altair_logo.png){fig-align="center"}
+:::
+
+

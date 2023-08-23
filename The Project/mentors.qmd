@@ -3,14 +3,15 @@ title: "The Mentors"
 author: "Amartya Nambiar"
 categories: ["About"]
 description:  "&nbsp;&nbsp;Pillars of Support 🙏"
-title-block-banner: true
+---
+
 ---
 
 EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.
 
 They are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states.
 
-----
+---
 
 # Martin Beracochea 
 <h4>MGnify Production Project Leader</h4>

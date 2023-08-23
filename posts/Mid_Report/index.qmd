@@ -1,0 +1,19 @@
+---
+title: "Midterm Report"
+author: "Amartya Nambiar"
+categories: ["Evals","Report"]
+date: "07-16-2023"
+description:  "Summary of what happened till the Midterm Evaluation"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+---
+
+<div style="text-align:center">
+![](gsoc+ebi_logo.png){fig-align="center"}
+</div>
+---
+
+
