@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amartya Nambiar">
-<meta name="description" content="&nbsp;Noting down some Important Commands for future reference">
+<meta name="dcterms.date" content="2023-07-16">
+<meta name="description" content="Summary of what happened till the Midterm Evaluation">
 
-<title>GSoC - 23 : The MGnify Project - Saviour Commands</title>
+<title>GSoC - 23 : The MGnify Project - Midterm Report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,60 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">GSoC - 23 : The MGnify Project</span>
     </a>
   </div>
@@ -143,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Sidebar/commands.html"><strong>Saviour Commands</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Midterm Report</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -153,34 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title"><strong>Saviour Commands</strong></h1>
-                  <div>
-        <div class="description">
-          &nbsp;Noting down some Important Commands for future reference
-        </div>
-      </div>
-                </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Amartya Nambiar </p>
-            </div>
-    </div>
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -201,13 +141,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../src/notebooks/PathwaysExplorer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/notebooks/PathwaysExplorer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pathways Visualization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/Viz_Recon/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Viz_Recon/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MGnify Visualization Recon</span></a>
   </div>
 </li>
@@ -224,19 +164,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../The Project/project.html" class="sidebar-item-text sidebar-link">
+  <a href="../../The Project/project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Project</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../The Project/mentors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../The Project/mentors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Mentors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../The Project/me.html" class="sidebar-item-text sidebar-link">
+  <a href="../../The Project/me.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Me</span></a>
   </div>
 </li>
@@ -244,13 +184,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Sidebar/keywords.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Sidebar/keywords.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Keywords</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Sidebar/commands.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../Sidebar/commands.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Saviour Commands</strong></span></a>
   </div>
 </li>
@@ -260,102 +200,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#get-the-jupyter-lab-server-up-and-running" id="toc-get-the-jupyter-lab-server-up-and-running" class="nav-link active" data-scroll-target="#get-the-jupyter-lab-server-up-and-running">Get The Jupyter Lab Server Up and Running</a></li>
-  <li><a href="#static-documentation-rendering" id="toc-static-documentation-rendering" class="nav-link" data-scroll-target="#static-documentation-rendering">Static Documentation Rendering</a></li>
-  <li><a href="#deploy-mgnify-site-with-test-data" id="toc-deploy-mgnify-site-with-test-data" class="nav-link" data-scroll-target="#deploy-mgnify-site-with-test-data">Deploy MGnify site with Test data</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Midterm Report</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Evals</div>
+    <div class="quarto-category">Report</div>
+  </div>
+  </div>
 
-
-
-<section id="get-the-jupyter-lab-server-up-and-running" class="level4">
-<h4 class="anchored" data-anchor-id="get-the-jupyter-lab-server-up-and-running">Get The Jupyter Lab Server Up and Running</h4>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<div>
+  <div class="description">
+    Summary of what happened till the Midterm Evaluation
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-For &nbsp;<mark style="background-color: yellow">pathways_vis</mark>&nbsp; Branch
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-v</span> <span class="va">$PWD</span>/src/notebooks:/home/jovyan/mgnify-examples <span class="at">-p</span> 8888:8888 <span class="dt">\</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>quay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Amartya Nambiar </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 16, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<hr>
+<div style="text-align:center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="gsoc+ebi_logo.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
 <hr>
-</section>
-<section id="static-documentation-rendering" class="level4">
-<h4 class="anchored" data-anchor-id="static-documentation-rendering">Static Documentation Rendering</h4>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Build the Docker Image for Quarto Rendering
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-f</span> docker/docs.Dockerfile <span class="at">-t</span> notebooks-static .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Render the Docs &amp; Notebooks
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-v</span> <span class="va">$PWD</span>:/opt/repo <span class="at">-w</span> /opt/repo notebooks-static render <span class="at">--execute</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Start the server for serving the Quarto rendered files
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-v</span> <span class="va">$PWD</span>:/opt/repo <span class="at">-w</span> /opt/repo/_site <span class="at">-p</span> 4444:4444 <span class="at">--entrypoint</span> python notebooks-static <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="at">-m</span> http.server 4444</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<hr>
-</section>
-<section id="deploy-mgnify-site-with-test-data" class="level4">
-<h4 class="anchored" data-anchor-id="deploy-mgnify-site-with-test-data">Deploy MGnify site with Test data</h4>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Add test data, Start the API server and Render site
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">task</span> restore-mongo-test-db <span class="kw">&amp;&amp;</span> <span class="ex">task</span> run-client</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

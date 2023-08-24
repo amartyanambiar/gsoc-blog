@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Amartya’s GSoC Journal",
     "section": "",
-    "text": "Pathways Visualization\n\n\n\n\n\n\n\nR\n\n\nVisualization\n\n\n\n\nAn expertly curated notebook to generate pathway visualizations from MGnify data, to which I actively contributed.\n\n\n\n\n\n\nJun 29, 2023\n\n\nAlejandra Escobar (MGnify team) and Amartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nMGnify Visualization Recon\n\n\n\n\n\n\n\nVisualization\n\n\n\n\nCondensed list of Visualizations used in MGnify\n\n\n\n\n\n\nJun 12, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nThe Project\n\n\n\n\n\n\n\nAbout\n\n\n\n\nThrilled to announce that I have been accepted as a GSoC Contributor for the year of 2023 at EBI (European Bioinformatics Institute). I am delighted to share the details of my project.\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
+    "text": "Midterm Report\n\n\n\n\n\n\n\nEvals\n\n\nReport\n\n\n\n\nSummary of what happened till the Midterm Evaluation\n\n\n\n\n\n\nJul 16, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nPathways Visualization\n\n\n\n\n\n\n\nR\n\n\nVisualization\n\n\n\n\nAn expertly curated notebook to generate pathway visualizations from MGnify data, to which I actively contributed.\n\n\n\n\n\n\nJun 29, 2023\n\n\nAlejandra Escobar (MGnify team) and Amartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nMGnify Visualization Recon\n\n\n\n\n\n\n\nVisualization\n\n\n\n\nCondensed list of Visualizations used in MGnify\n\n\n\n\n\n\nJun 12, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\n  \n\n\n\n\nThe Project\n\n\n\n\n\n\n\nAbout\n\n\n\n\nThrilled to announce that I have been accepted as a GSoC Contributor for the year of 2023 at EBI (European Bioinformatics Institute). I am delighted to share the details of my project.\n\n\n\n\n\n\nMay 29, 2023\n\n\nAmartya Nambiar\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Sidebar/keywords.html",
@@ -18,7 +18,7 @@
     "href": "Sidebar/commands.html",
     "title": "Saviour Commands",
     "section": "",
-    "text": "Get The Jupyter Lab Server Up and Running\n\n\n\n\n\n\nFor  pathways_vis  Branch\n\n\n\ndocker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \\\nquay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis\n\n\n\n\n\nStatic Documentation Rendering\n\n\n\n\n\n\nBuild the Docker Image for Quarto Rendering\n\n\n\ndocker build -f docker/docs.Dockerfile -t notebooks-static .\n\n\n\n\n\n\n\n\nRender the Docs & Notebooks\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo notebooks-static render --execute\n\n\n\n\n\n\n\n\nStart the server for serving the Quarto rendered files\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static \\\n -m http.server 4444"
+    "text": "Get The Jupyter Lab Server Up and Running\n\n\n\n\n\n\nFor  pathways_vis  Branch\n\n\n\ndocker run -it -v $PWD/src/notebooks:/home/jovyan/mgnify-examples -p 8888:8888 \\\nquay.io/microbiome-informatics/emg-notebooks.dev:pathways_vis\n\n\n\n\n\nStatic Documentation Rendering\n\n\n\n\n\n\nBuild the Docker Image for Quarto Rendering\n\n\n\ndocker build -f docker/docs.Dockerfile -t notebooks-static .\n\n\n\n\n\n\n\n\nRender the Docs & Notebooks\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo notebooks-static render --execute\n\n\n\n\n\n\n\n\nStart the server for serving the Quarto rendered files\n\n\n\ndocker run -it -v $PWD:/opt/repo -w /opt/repo/_site -p 4444:4444 --entrypoint python notebooks-static \\\n -m http.server 4444\n\n\n\n\n\nDeploy MGnify site with Test data\n\n\n\n\n\n\nAdd test data, Start the API server and Render site\n\n\n\ntask restore-mongo-test-db && task run-client"
   },
   {
     "objectID": "The Project/me.html",
@@ -32,7 +32,7 @@
     "href": "The Project/mentors.html",
     "title": "The Mentors",
     "section": "",
-    "text": "EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.\nThey are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states.\n\n\nMartin Beracochea\n\nMGnify Production Project Leader\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/martin-beracochea/\n\n\n\n\n\n\n\n\n\n\n\n\nSandy Rogers\n\nMGnify Website Full Stack Developer\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/martin-beracochea/"
+    "text": "EMBL-EBI is international, innovative and interdisciplinary, and a champion of open data in the life sciences.\nThey are part of the European Molecular Biology Laboratory (EMBL), an intergovernmental research organisation funded by over 20 member states, prospect and associate member states.\n\n\nMartin Beracochea\n\nMGnify Production Project Leader\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/martin-beracochea/\n\n\n\n\n\n\n\n\n\n\n\n\nSandy Rogers\n\nMGnify Website Full Stack Developer\n\n\n\n\nEBI Portfolio : https://www.ebi.ac.uk/people/person/sandy-alexander-rogers/"
   },
   {
     "objectID": "The Project/project.html",

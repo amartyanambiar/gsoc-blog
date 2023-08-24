@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/index.html</loc>
-    <lastmod>2023-07-03T07:11:44.585Z</lastmod>
+    <lastmod>2023-08-24T15:57:06.115Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/keywords.html</loc>
-    <lastmod>2023-07-03T07:11:45.134Z</lastmod>
+    <lastmod>2023-08-24T15:57:06.666Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/Sidebar/commands.html</loc>
-    <lastmod>2023-07-03T07:11:45.665Z</lastmod>
+    <lastmod>2023-08-24T15:57:07.213Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/me.html</loc>
-    <lastmod>2023-07-03T07:11:46.105Z</lastmod>
+    <lastmod>2023-08-24T15:57:07.640Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/mentors.html</loc>
-    <lastmod>2023-07-03T07:11:46.554Z</lastmod>
+    <lastmod>2023-08-24T15:57:08.088Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/The Project/project.html</loc>
-    <lastmod>2023-07-03T07:11:47.049Z</lastmod>
+    <lastmod>2023-08-24T15:57:08.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Mid_Report/index.html</loc>
+    <lastmod>2023-08-24T15:57:08.987Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/posts/Viz_Recon/index.html</loc>
-    <lastmod>2023-07-03T07:11:47.695Z</lastmod>
+    <lastmod>2023-08-24T15:57:09.637Z</lastmod>
   </url>
   <url>
     <loc>https://amartyanambiar.github.io/gsoc-blog/src/notebooks/PathwaysExplorer.html</loc>
-    <lastmod>2023-07-03T07:11:48.924Z</lastmod>
+    <lastmod>2023-08-24T15:57:10.843Z</lastmod>
   </url>
 </urlset>
