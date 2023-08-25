@@ -1,0 +1,213 @@
+---
+title: "GSoC - 2023 : Wrapped"
+author: "Amartya Nambiar"
+categories: ["Evals","Report"]
+date: "08-24-2023"
+description:  "Final Report - Comprehensive Summary of my Contributions"
+editor: 
+  markdown: 
+    wrap: 72
+toc-depth: 4
+---
+
+------------------------------------------------------------------------
+
+::: {style="text-align:center"}
+![](gsoc+ebi_logo.png){fig-align="center"}
+:::
+
+------------------------------------------------------------------------
+
+My contribution at [**EMBL - EBI**](https://www.ebi.ac.uk/) for
+[**Google Summer of Code**](https://summerofcode.withgoogle.com/)(GSoC)
+involved creating visualizations that would help in comparative
+metagenomics. Additionally, I used Vega which introduced an approach
+that would allow a common grammar for creating visualisations. This was
+done to enhance code reusability in both React and Jupyter Notebooks,
+regardless of programming language.
+
+After the results were released, my mentors [**Martin
+Beracochea**](/The%20Project/mentors.html#martin-beracochea) and
+[**Sandy Rogers**](/The%20Project/mentors.html#sandy-rogers) remained in
+close contact with me during the community bonding period. Subsequently,
+the coding period unfolded, which I've structured into three distinct
+phases to align with the three projects I undertook as part of my
+contributions.
+
+------------------------------------------------------------------------
+
+### [[Phase 1]{.underline}]{style="color:#18b85b"} <sup style="font-size:60%;">30<sup>th</sup> May - 30<sup>th</sup> Jun</sup>
+
+-   Delved into relevant research papers, understand the intricacies of
+    assembly runs, samples, studies and analyses, which form the
+    foundational concepts of MGnify.
+
+-   Documented all visualizations present on the MGnify website which
+    was used in Phase 2 -
+    [Viz_Recon](http://localhost:4843/posts/Viz_Recon/)
+
+-   Significant chunk of Phase 1 was spent contributing and
+    collaborating with [Alejandra
+    Escobar](https://www.ebi.ac.uk/people/person/alejandra-escobar-zepeda/)
+    (MGnify Bioinformatician) on the enhancement of her Jupyter
+    notebook - **Drawing presence/absence KOs for one metagenomic
+    sample**, specifically focusing on Pathways Visualization.
+
+-   The objective was to streamline the notebook, making it more
+    concise, interactive, self-explanatory, and immediately usable.
+
+-   [**Technologies Utilized**]{.underline} **:**
+
+    -   [Docker](https://www.docker.com/) +
+        [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/) +
+        [R](https://www.r-project.org/)
+
+    -   [Quarto](https://quarto.org/)
+
+    -   Packages like
+        [KEGGREST](http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html),
+        [Pathview](https://pathview.uncc.edu/overview#kegg_view)
+
+-   [**Pull Request**]{.underline} **:**
+
+    -   Worked on the existing PR by Alejandra, **Link :**
+        <https://github.com/EBI-Metagenomics/notebooks/pull/26>
+
+    -   **Status :** [**Under Review**]{style="color:#dce157"} 🟡
+
+::: {style="text-align:center; color:#18b85b; font-size:30px"}
+: : : : : : : : : : : : : : : : : :
+:::
+
+### [[Phase 2]{.underline}]{style="color:#18b85b"} <sup style="font-size:60%;">1<sup>st</sup> Jul - 14<sup>th</sup> Aug</sup>
+
+-   The second phase deals with exploring and building visualizations
+    for the MGnify website.
+
+<blockquote style="margin-right: 50px; border-color: transparent;">
+
+#### [[**Phase 2A**]{.underline}]{style="color:#18b85b;"}<sup style="font-size:60%;color:black;"> **1**<sup>**st**</sup> **Jul - 16**<sup>**th**</sup> **Jul**</sup>
+
+<blockquote style="margin-right: 50px; font-family: &#39;IBM Plex Sans&#39;, sans-serif; font-size: 95%;color:black;">
+
+-   This phase dealt with exploration of visualization technologies that
+    could be used both in javascript and python.
+
+-   This involved testing packages like plotly and highcharts
+    preferaablly highcharts bcos mgnify website uses Highcharts.js for
+    visualization in both JS and Python.
+
+-   Then cam up the idea of exploring a common visualization grammar
+    that would solve thise problem efficiently.
+
+-   Tested out pandas.js, danfo.js, vegalite
+
+-   This is important because visualizations then could be easily ported
+    to jupyter notebooks where the user would be able to use data on the
+    same visualization with custom or wrangled data that serve their
+    purpose.
+
+-   while everything looked great with highcharts.js, we had one issue
+    which is highcharts cant refer to data as a link. which would make
+    it difficult to handle(large data) the interoperability of it
+    between react and jupyter.
+
+-   By the end of this phase, we decided to go ahead with vega ecosystem
+    bacuase it serves our interest welll.
+<br /><br />
+-   [**Packages Explored**]{.underline} **:**
+
+    -   danfo
+
+</blockquote>
+
+::: {style="text-align:center; color:#18b85b; font-size:30px"}
+. . .
+:::
+
+#### [[**Phase 2B**]{.underline}]{style="color:#18b85b"}<sup style="font-size:60%;color:black;"> **17**<sup>**th**</sup> **Jul - 14**<sup>**th**</sup> **Aug**</sup>
+
+<blockquote style="margin-right: 50px; font-family: &#39;IBM Plex Sans&#39;, sans-serif; font-size: 95%;color:black;">
+
+-   this phase involved building visualisations in vega.
+-   also got to meet the team at EBI for a talk where I told them about
+    gsoc, my progress and also gave them a demo of vegalite.
+-   The Visualisations that have been successfully generated using Vega
+    are :
+
+| Name                                     | Visualisation Type                                | Component used (File)                                                                                                                                                                      |
+|------------------------|------------------------|------------------------|
+| **Number of Sequence Reads per QC step** | Horizontal Bar Chart (uses tsx preprocessed data) | [QCChart.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/QCChart.tsx)                                                     |
+| **Reads Length Histogram**               | Area Chart + Std Deviation band                   | [QC-chart-components/VConcatTop.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/QC-chart-components/VConcatTop.tsx)       |
+| **Reads GC Distribution**                | Area Chart + Std Deviation band                   | [QC-chart-components/VConcatTop.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/QC-chart-components/VConcatTop.tsx)       |
+| **Reads Length (Min, Avg, Max)**         | Horizontal Bar Chart                              | [QC-chart-components/VConcatBottom.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/QC-chart-components/VConcatBottom.tsx) |
+| **Reads GC-AT Content (%)**              | Horizontal Stacked Bar Chart                      | [QC-chart-components/VConcatBottom.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/QC-chart-components/VConcatBottom.tsx) |
+| **Nucleotide Position Histogram**        | Stacked Area Chart                                | [NucleotidesHistogram.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/NucleotidesHistogram.tsx)                           |
+| **Interpro Sequence feature summary**    | Horizontal Bar Chart                              | [InterproBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/InterproBar.tsx)                                             |
+| **GO Terms**                             | Concatenated Horizontal Bar Chart                 | [GOBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/GOBar.tsx)                                                         |
+| **Domain + Phylum Composition**          | Multi-Colour Bar Chart                            | [TaxBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/b48808d407baf649b7716d7c9f8992536344e64a/src/components/VegaCharts/TaxBar.tsx)                               |
+| **Pfam**                                 | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **KO**                                   | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **KEGG Module categories**               | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **antiSMASH gene clusters**              | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **COG Analysis**                         | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **KEGG Class Analysis**                  | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+| **KEGG Module Analysis**                 | Vertical Bar Chart                                | [VerticalBar.tsx](https://github.com/EBI-Metagenomics/ebi-metagenomics-client/blob/vega-charts-init/src/components/VegaCharts/VerticalBar.tsx)                                             |
+
+-   All charts use Vega to pre-process data except
+    `Interpro Sequence feature summary` *(for label - Contigs/Reads)*,
+    `Number of Sequence Reads per QC step` and
+    `Taxonomical Analysis - Domain + Phylum` *(keeping in mind how the
+    hover capability of highcharts + table would use preprocessed data)*
+    charts which use pre-processed data for reasons such as complex
+    transformations that would be difficult to implement in VegaLite.
+
+-   [**Packages Explored**]{.underline} **:**
+
+</blockquote>
+
+</blockquote>
+
+-   [**Pull Request**]{.underline} **:**
+
+::: {style="text-align:center; color:#18b85b; font-size:30px"}
+: : : : : : : : : : : : : : : : : :
+:::
+
+### [[Phase 3]{.underline}]{style="color:#18b85b"} <sup style="font-size:60%;">14<sup>th</sup> Aug
+
+-   Working on Varsha Kale's idea of Study Summary, more specifically
+    detailed analysis GO abundamces - GO-slim and GO data.
+
+-   Involves working ontologie web format of gene ontologies
+
+-   The visualizations for the same include a bar chart for go slim, a
+    tree for parent and subclass GOs and a heatmap for GO annotaions
+    over asembly runs for a parent and subclass GOs. tree & heatmap use
+    GO full abundance
+
+-   note that altair is used which is the py package for generating
+    vegalite viz
+
+-   [**Technologies Utilized**]{.underline} **:**
+
+    -   [JupyterLab](https://jupyterlab.readthedocs.io/en/latest/) +
+        Python
+
+    -   Packages like Altair, graphviz, owlready..
+
+------------------------------------------------------------------------
+
+### [[Unexplored Horizons]{.underline}]{style="color:#18b85b"}
+
+-   Most important proposed plans included a common repo that would
+    contain the schema for Vegalite visualisations which could be called
+    by both the frontnnd(react) and jupyter notebooks for deeper
+    analysis.
+-   Create a Vegalite dashboard which would house multiple charts with
+    interactivity and input controls for deep comparative metagenomics.
+-   Also was the idea to pre-generate KRONA charts for the study
+    analysis summary Taxa abundance data which would then could be
+    called in the jupyter notebook allowing a complete analysis summary
+    of study considering the Phase 3 which already covers the GO terms
+    analysis.

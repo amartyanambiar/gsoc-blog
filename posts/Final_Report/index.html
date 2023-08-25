@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amartya Nambiar">
-<meta name="dcterms.date" content="2023-08-24">
+<meta name="dcterms.date" content="2023-08-25">
 <meta name="description" content="Final Report - Comprehensive Summary of my Contributions">
 
 <title>GSoC - 23 : The MGnify Project - GSoC - 2023 : Wrapped</title>
@@ -211,7 +211,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phase-2b-17th-jul---14th-aug" id="toc-phase-2b-17th-jul---14th-aug" class="nav-link" data-scroll-target="#phase-2b-17th-jul---14th-aug"><span style="color:#18b85b"><u><strong>Phase 2B</strong></u></span><sup style="font-size:60%;color:black;"> <strong>17</strong><sup><strong>th</strong></sup> <strong>Jul - 14</strong><sup><strong>th</strong></sup> <strong>Aug</strong></sup></a></li>
   </ul></li>
   <li><a href="#phase-3-14th-aug" id="toc-phase-3-14th-aug" class="nav-link" data-scroll-target="#phase-3-14th-aug"><span style="color:#18b85b"><u>Phase 3</u></span> <sup style="font-size:60%;">14<sup>th</sup> Aug</sup></a></li>
-  <li><a href="#unexplored-horizons" id="toc-unexplored-horizons" class="nav-link" data-scroll-target="#unexplored-horizons"><span style="color:#18b85b"><u>Unexplored Horizons</u></span></a></li>
+  <li><a href="#unexplored-horizons" id="toc-unexplored-horizons" class="nav-link" data-scroll-target="#unexplored-horizons"><span style="color:#18b85b"><u>Unexplored Horizons</u></span></a>
+  <ul>
+  <li><a href="#schema-for-vega-lite-visualizations" id="toc-schema-for-vega-lite-visualizations" class="nav-link" data-scroll-target="#schema-for-vega-lite-visualizations"><span style="color:#18b85b"><strong>Schema for Vega-Lite Visualizations</strong></span></a></li>
+  <li><a href="#vega-lite-dashboard-for-comparative-metagenomics" id="toc-vega-lite-dashboard-for-comparative-metagenomics" class="nav-link" data-scroll-target="#vega-lite-dashboard-for-comparative-metagenomics"><span style="color:#18b85b"><strong>Vega-Lite Dashboard for Comparative Metagenomics</strong></span></a></li>
+  <li><a href="#pre-generated-krona-charts" id="toc-pre-generated-krona-charts" class="nav-link" data-scroll-target="#pre-generated-krona-charts"><span style="color:#18b85b"><strong>Pre-generated KRONA Charts</strong></span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -246,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 24, 2023</p>
+      <p class="date">August 25, 2023</p>
     </div>
   </div>
   
@@ -272,18 +277,18 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="phase-1-30th-may---30th-jun"><span style="color:#18b85b"><u>Phase 1</u></span> <sup style="font-size:60%;">30<sup>th</sup> May - 30<sup>th</sup> Jun</sup></h3>
 <ul>
 <li><p>Delved into relevant research papers, understand the intricacies of assembly runs, samples, studies and analyses, which form the foundational concepts of MGnify.</p></li>
-<li><p>Documented all visualizations present on the MGnify website which was used in Phase 2 - <a href="http://localhost:4843/posts/Viz_Recon/">Viz_Recon</a></p></li>
-<li><p>Significant chunk of Phase 1 was spent contributing and collaborating with <a href="https://www.ebi.ac.uk/people/person/alejandra-escobar-zepeda/">Alejandra Escobar</a> (MGnify Bioinformatician) on the enhancement of her Jupyter notebook - <strong>Drawing presence/absence KOs for one metagenomic sample</strong>, specifically focusing on Pathways Visualization.</p></li>
-<li><p>The objective was to streamline the notebook, making it more concise, interactive, self-explanatory, and immediately usable.</p></li>
+<li><p>Documented all visualizations present on the MGnify website which was extensively used in Phase 2 - <a href="http://localhost:4843/posts/Viz_Recon/"><strong>Viz_Recon</strong></a></p></li>
+<li><p>Significant chunk of Phase 1 was spent contributing and collaborating with <a href="https://www.ebi.ac.uk/people/person/alejandra-escobar-zepeda/"><strong>Alejandra Escobar</strong></a> (MGnify Bioinformatician) on the enhancement of her Jupyter notebook - <strong>Drawing presence/absence KOs for one metagenomic sample</strong>, specifically focusing on Pathways Visualization.</p></li>
+<li><p>The objective was to streamline the notebook, making it more concise, interactive, self-explanatory, and immediately usable. <br><br></p></li>
 <li><p><u><strong>Technologies Utilized</strong></u> <strong>:</strong></p>
 <ul>
 <li><p><a href="https://www.docker.com/">Docker</a> + <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a> + <a href="https://www.r-project.org/">R</a></p></li>
 <li><p><a href="https://quarto.org/">Quarto</a></p></li>
-<li><p>Packages like <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html">KEGGREST</a>, <a href="https://pathview.uncc.edu/overview#kegg_view">Pathview</a></p></li>
+<li><p>Packages like <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html">KEGGREST</a>, <a href="https://pathview.uncc.edu/overview#kegg_view">Pathview</a> <br><br></p></li>
 </ul></li>
 <li><p><u><strong>Pull Request</strong></u> <strong>:</strong></p>
 <ul>
-<li><p>Worked on the existing PR by Alejandra, <strong>Link :</strong> <a href="https://github.com/EBI-Metagenomics/notebooks/pull/26" class="uri">https://github.com/EBI-Metagenomics/notebooks/pull/26</a></p></li>
+<li><p>Worked on an existing PR by Alejandra, <strong>Link :</strong> <a href="https://github.com/EBI-Metagenomics/notebooks/pull/26" class="uri">https://github.com/EBI-Metagenomics/notebooks/pull/26</a></p></li>
 <li><p><strong>Status :</strong> <span style="color:#dce157"><strong>Under Review</strong></span> 🟡</p></li>
 </ul></li>
 </ul>
@@ -299,19 +304,14 @@ ul.task-list li input[type="checkbox"] {
 <blockquote style="margin-right: 50px; border-color: transparent;" class="blockquote">
 <section id="phase-2a-1st-jul---16th-jul" class="level4">
 <h4 class="anchored" data-anchor-id="phase-2a-1st-jul---16th-jul"><span style="color:#18b85b;"><u><strong>Phase 2A</strong></u></span><sup style="font-size:60%;color:black;"> <strong>1</strong><sup><strong>st</strong></sup> <strong>Jul - 16</strong><sup><strong>th</strong></sup> <strong>Jul</strong></sup></h4>
-<blockquote style="margin-right: 50px; font-family: 'IBM Plex Sans', sans-serif; font-size: 95%;color:black;" class="blockquote">
+<blockquote style="margin-right: 50px; font-family: 'IBM Plex Sans', sans-serif; font-size: 95%;color:black; line-height: 1.7;" class="blockquote">
 <ul>
-<li><p>This phase dealt with exploration of visualization technologies that could be used both in javascript and python.</p></li>
-<li><p>This involved testing packages like plotly and highcharts preferaablly highcharts bcos mgnify website uses Highcharts.js for visualization in both JS and Python.</p></li>
-<li><p>Then cam up the idea of exploring a common visualization grammar that would solve thise problem efficiently.</p></li>
-<li><p>Tested out pandas.js, danfo.js, vegalite</p></li>
-<li><p>This is important because visualizations then could be easily ported to jupyter notebooks where the user would be able to use data on the same visualization with custom or wrangled data that serve their purpose.</p></li>
-<li><p>while everything looked great with highcharts.js, we had one issue which is highcharts cant refer to data as a link. which would make it difficult to handle(large data) the interoperability of it between react and jupyter.</p></li>
-<li><p>By the end of this phase, we decided to go ahead with vega ecosystem bacuase it serves our interest welll. <br><br></p></li>
-<li><p><u><strong>Packages Explored</strong></u> <strong>:</strong></p>
-<ul>
-<li>danfo</li>
-</ul></li>
+<li><p>This phase focused on finding visualization solutions that could work seamlessly in both JavaScript and Python environments.</p></li>
+<li><p>Involved testing of packages like Plotly and <a href="https://www.highcharts.com/">Highcharts</a> were tested, with a preference for Highcharts due to its usage in the MGnify site.</p></li>
+<li><p>But then Highchart posed an issue as it couldn’t reference data as a link, impacting interoperability between React and Jupyter, especially with large datasets.</p></li>
+<li><p>Then came the idea of a common visualization grammar, enabling easy porting of visualizations to Jupyter notebooks for users to perform deeper visualization and push in custom data as well.</p></li>
+<li><p>Alternatives like <a href="https://github.com/StratoDem/pandas-js">pandas-js</a>, <a href="https://danfo.jsdata.org/">Danfo.js</a>, and <a href="https://vega.github.io/vega-lite/">Vega-Lite</a> were considered.</p></li>
+<li><p>In the end, the <a href="https://vega.github.io/vega/">Vega</a> ecosystem was selected due to its compatibility with JavaScript and Python, and its ability to handle large datasets, ensuring seamless interoperability.</p></li>
 </ul>
 </blockquote>
 <div style="text-align:center; color:#18b85b; font-size:30px">
@@ -320,10 +320,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="phase-2b-17th-jul---14th-aug" class="level4">
 <h4 class="anchored" data-anchor-id="phase-2b-17th-jul---14th-aug"><span style="color:#18b85b"><u><strong>Phase 2B</strong></u></span><sup style="font-size:60%;color:black;"> <strong>17</strong><sup><strong>th</strong></sup> <strong>Jul - 14</strong><sup><strong>th</strong></sup> <strong>Aug</strong></sup></h4>
-<blockquote style="margin-right: 50px; font-family: 'IBM Plex Sans', sans-serif; font-size: 95%;color:black;" class="blockquote">
+<blockquote style="margin-right: 50px; font-family: 'IBM Plex Sans', sans-serif; font-size: 95%;color:black; line-height: 2;" class="blockquote">
 <ul>
-<li>this phase involved building visualisations in vega.</li>
-<li>also got to meet the team at EBI for a talk where I told them about gsoc, my progress and also gave them a demo of vegalite.</li>
+<li>This phase primarily involved the development of visualizations using the Vega framework.</li>
+<li>Also, I had the privilege of meeting the EBI team, where I discussed my GSoC experience, shared progress updates, and conducted a live demo of Vega-Lite to showcase its capabilities. (<a href="https://docs.google.com/presentation/d/1HzN5OsABM2pORKZPK_MiA-ZGXbmu-iG0FDfrnv5geis/edit?usp=sharing">Presentation</a>)</li>
 <li>The Visualisations that have been successfully generated using Vega are :</li>
 </ul>
 <table class="table">
@@ -418,13 +418,195 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <ul>
-<li><p>All charts use Vega to pre-process data except <code>Interpro Sequence feature summary</code> <em>(for label - Contigs/Reads)</em>, <code>Number of Sequence Reads per QC step</code> and <code>Taxonomical Analysis - Domain + Phylum</code> <em>(keeping in mind how the hover capability of highcharts + table would use preprocessed data)</em> charts which use pre-processed data for reasons such as complex transformations that would be difficult to implement in VegaLite.</p></li>
-<li><p><u><strong>Packages Explored</strong></u> <strong>:</strong></p></li>
+<li>All charts use Vega to pre-process data except <code>Interpro Sequence feature summary</code> <em>(for label - Contigs/Reads)</em>, <code>Number of Sequence Reads per QC step</code> and <code>Taxonomical Analysis - Domain + Phylum</code> <em>(keeping in mind how the hover capability of highcharts + table would use preprocessed data)</em> charts which use pre-processed data for reasons such as complex transformations that would be difficult to implement in Vega-Lite. <br><br></li>
 </ul>
 </blockquote>
 </section></blockquote>
 <ul>
-<li><u><strong>Pull Request</strong></u> <strong>:</strong></li>
+<li>One of my favorite charts that I created was the Nucleotide position Histogram (live example below):</li>
+</ul>
+
+
+
+  <meta charset="UTF-8">
+  <title>Vega-Lite Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+
+  <div id="vega-chart"></div>
+ 
+  <script>
+    var spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+ "width":"container",
+  "title": {
+    "text": "Nucleotide position histogram",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/amartyanambiar/gsoc-blog/main/posts/Vega_Sheet/nucleotide-distribution",
+    "format": {"type": "tsv"}
+  },
+  "transform": [
+    {"fold": ["A", "T", "C", "G", "N"]},
+    {
+      "calculate": "{'A':4, 'T':3, 'C':2, 'G':1, 'N':0}[datum.key]",
+      "as": "order"
+    },
+    {"calculate": "datum.pos * 1", "as": "pos"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "pos",
+      "type": "quantitative",
+      "scale": {"domain": [1, 500]}
+    },
+    "tooltip": [
+      {"field": "pos", "title": "Position"},
+      {"field": "A", "type": "quantitative"},
+      {"field": "T", "type": "quantitative"},
+      {"field": "C", "type": "quantitative"},
+      {"field": "G", "type": "quantitative"},
+      {"field": "N", "type": "quantitative"}
+    ]
+  },
+  "layer": [
+    {
+      "width": 800,
+      "mark": {"type": "area", "line": {"size": 2}},
+      "params": [
+        {
+          "name": "nuc",
+          "select": {"type": "point", "fields": ["key"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": {"param": "nuc", "empty": true}}],
+      "encoding": {
+        "x": {
+          "field": "pos",
+          "type": "quantitative",
+          "axis": {"labelAngle": -20, "tickCount": 56}
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "stack": "zero",
+          "scale": {"domain": [0, 100]},
+          "axis": {"tickCount": 4, "grid": true}
+        },
+        "color": {
+          "scale": {
+            "domain": ["A", "T", "C", "G", "N"],
+            "range": [
+              "rgb(16, 150, 24)",
+              "rgb(220, 57, 18)",
+              "rgb(51, 102, 204)",
+              "rgb(255, 153, 0)",
+              "rgb(138, 65, 23)"
+            ]
+          },
+          "field": "key",
+          "type": "ordinal",
+          "title": "Shift+Click for nucleotide multi-selection"
+        },
+        "order": {"field": "order", "type": "ordinal"},
+        "opacity": {"value": 0.7}
+      }
+    },
+    {
+      "mark": "rule",
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "mousemove",
+            "clear": "mouseout",
+            "nearest": true
+          }
+        },
+        {
+          "name": "zoom",
+          "bind": "scales",
+          "select": {
+            "type": "interval",
+            "encodings": ["x"],
+            "zoom": "wheel!",
+            "mark": {"fill": "#111", "fillOpacity": 0.5, "stroke": "#595959"}
+          }
+        }
+      ],
+      "encoding": {
+        "color": {
+          "condition": {"param": "hover", "empty": false, "value": "#595959"},
+          "value": "transparent"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "grid": false,
+      "title": null,
+      "domain": false,
+      "tickColor": "#ccc",
+      "labelColor": "#666",
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 14,
+      "labelFontWeight": "bold",
+      "labelFont": "Lucida Grande",
+      "orient": "bottom",
+      "titleFontSize": 9,
+      "titleFontWeight": "lighter"
+    },
+    "title": {"fontSize": 20, "font": "Lucida Grande", "fontWeight": "normal"}
+  }
+};
+
+    vegaEmbed('#vega-chart', spec)
+      .then(function(result) {})
+      .catch(console.error);
+  </script>
+
+
+<ul>
+<li><p><u><strong>Technologies Utilized</strong></u> <strong>:</strong></p>
+<ul>
+<li><p><a href="https://www.docker.com/">Docker</a> + <a href="https://react.dev/blog/2023/03/16/introducing-react-dev">React</a> - <a href="https://www.typescriptlang.org/">Typescript</a></p></li>
+<li><p><a href="https://vega.github.io/vega-lite/">Vega-Lite</a></p></li>
+<li><p>Packages : <a href="https://github.com/vega/react-vega/tree/master">react-vega</a></p></li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p><u><strong>Pull Requests</strong></u> <strong>:</strong></p>
+<ul>
+<li><dl>
+<dt><a href="https://github.com/EBI-Metagenomics/ebi-metagenomics-client"><strong>ebi-metagenomics-client</strong></a></dt>
+<dd>
+Components were created for charts mentioned above
+</dd>
+</dl>
+<ul>
+<li><p><strong>Link :</strong> <a href="https://github.com/EBI-Metagenomics/ebi-metagenomics-client/pull/295" class="uri">https://github.com/EBI-Metagenomics/ebi-metagenomics-client/pull/295</a></p></li>
+<li><p><strong>Status : <span style="color:#dce157">Under Review</span></strong> 🟡</p></li>
+</ul></li>
+<li><p><a href="https://github.com/EBI-Metagenomics/emgapi"><strong>emgapi</strong></a> : Make a minor change in data format</p>
+<ul>
+<li><p><strong>Link :</strong> <a href="https://github.com/EBI-Metagenomics/emgapi/pull/321" class="uri">https://github.com/EBI-Metagenomics/emgapi/pull/321</a></p></li>
+<li><p><strong>Status : <span style="color:#dce157">Under Review</span></strong> 🟡</p></li>
+</ul></li>
+</ul></li>
 </ul>
 <div style="text-align:center; color:#18b85b; font-size:30px">
 <p>: : : : : : : : : : : : : : : : : :</p>
@@ -434,27 +616,49 @@ ul.task-list li input[type="checkbox"] {
 <section id="phase-3-14th-aug" class="level3">
 <h3 class="anchored" data-anchor-id="phase-3-14th-aug"><span style="color:#18b85b"><u>Phase 3</u></span> <sup style="font-size:60%;">14<sup>th</sup> Aug</sup></h3>
 <ul>
-<li><p>Working on Varsha Kale’s idea of Study Summary, more specifically detailed analysis GO abundamces - GO-slim and GO data.</p></li>
-<li><p>Involves working ontologie web format of gene ontologies</p></li>
-<li><p>The visualizations for the same include a bar chart for go slim, a tree for parent and subclass GOs and a heatmap for GO annotaions over asembly runs for a parent and subclass GOs. tree &amp; heatmap use GO full abundance</p></li>
-<li><p>note that altair is used which is the py package for generating vegalite viz</p></li>
+<li><p>Under the guidance of <a href="https://www.ebi.ac.uk/people/person/varsha-kale/"><strong>Varsha Kale</strong></a>, I worked on a her idea centered around the Study Summary feature.</p></li>
+<li><p>The idea’s focus was on conducting a comprehensive analysis of GO (Gene Ontology) abundances, both in terms of GO-slim and Complete GO annotation data.</p></li>
+<li><p>This required a deep dive into the intricate ontological web format of gene ontologies.</p></li>
+<li><p>This project led to creation of visualizations like a Bar Chart for GO-slim data and a Tree, Heatmap visualization for the Complete GO annotation data.</p></li>
+<li><p>The major point to be taken note of is that I harnessed the power of Altair, a Python package for generating Vega-Lite visualizations. <br><br></p></li>
 <li><p><u><strong>Technologies Utilized</strong></u> <strong>:</strong></p>
 <ul>
 <li><p><a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a> + Python</p></li>
-<li><p>Packages like Altair, graphviz, owlready..</p></li>
+<li><p>Packages like <a href="https://altair-viz.github.io/">Altair</a>, <a href="https://graphviz.readthedocs.io/en/stable/manual.html#installation">graphviz</a>, <a href="https://owlready2.readthedocs.io/en/v0.42/">Owlready2</a> <br><br></p></li>
+</ul></li>
+<li><p><u><strong>Pull Request</strong></u> <strong>:</strong></p>
+<ul>
+<li>🚧🚧 Work In Progress 🚧🚧</li>
 </ul></li>
 </ul>
 <hr>
 </section>
 <section id="unexplored-horizons" class="level3">
 <h3 class="anchored" data-anchor-id="unexplored-horizons"><span style="color:#18b85b"><u>Unexplored Horizons</u></span></h3>
+<section id="schema-for-vega-lite-visualizations" class="level4">
+<h4 class="anchored" data-anchor-id="schema-for-vega-lite-visualizations"><span style="color:#18b85b"><strong>Schema for Vega-Lite Visualizations</strong></span></h4>
 <ul>
-<li>Most important proposed plans included a common repo that would contain the schema for Vegalite visualisations which could be called by both the frontnnd(react) and jupyter notebooks for deeper analysis.</li>
-<li>Create a Vegalite dashboard which would house multiple charts with interactivity and input controls for deep comparative metagenomics.</li>
-<li>Also was the idea to pre-generate KRONA charts for the study analysis summary Taxa abundance data which would then could be called in the jupyter notebook allowing a complete analysis summary of study considering the Phase 3 which already covers the GO terms analysis.</li>
+<li>One of the best ideas was to create a common repo that would host the schema for Vega-Lite visualizations.</li>
+<li>This schema could be utilized by both the frontend (React) and Jupyter Notebooks, facilitating deeper data analysis.</li>
+<li>I believe this is the most important horizon to be explored with respect to Vega-Lite.</li>
+</ul>
+</section>
+<section id="vega-lite-dashboard-for-comparative-metagenomics" class="level4">
+<h4 class="anchored" data-anchor-id="vega-lite-dashboard-for-comparative-metagenomics"><span style="color:#18b85b"><strong>Vega-Lite Dashboard for Comparative Metagenomics</strong></span></h4>
+<ul>
+<li>A Vega-Lite dashboard within MGnify constituting multiple interactive charts and input controls.</li>
+<li>A dashboard of this kind would provide the users with an experience to delve deeply into Comparative Metagenomics, explore complex data with ease.</li>
+</ul>
+</section>
+<section id="pre-generated-krona-charts" class="level4">
+<h4 class="anchored" data-anchor-id="pre-generated-krona-charts"><span style="color:#18b85b"><strong>Pre-generated KRONA Charts</strong></span></h4>
+<ul>
+<li>In addition to the above, the idea of pre-generating KRONA charts for Taxanomic Analysis under Study Analysis Summary.</li>
+<li>These charts, once generated, could be integrated into Jupyter Notebooks, enabling a complete <code>Analysis Summary of a Study</code>, considering the work done with respect to GO analyses carried out in Phase 3.</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
