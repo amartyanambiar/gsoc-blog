@@ -428,7 +428,13 @@ ul.task-list li input[type="checkbox"] {
 
 
   <div id="vega-chart"></div>
+  <style>
  
+  #vega-chart {
+       width: 80%;
+      margin: 0 auto;
+    }
+    </style>
   <script>
     var spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -468,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
   },
   "layer": [
     {
-      "width": 600,
+     "width":"container",
       "mark": {"type": "area", "line": {"size": 2}},
       "params": [
         {
