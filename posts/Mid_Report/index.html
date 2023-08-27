@@ -141,6 +141,15 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../posts/Final_Report/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GSoC - 2023 : Wrapped</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text"><a href="https://docs.google.com/presentation/d/1HzN5OsABM2pORKZPK_MiA-ZGXbmu-iG0FDfrnv5geis/edit?usp=sharing" style="color:#595959;:hover::color:#18b85b;">EBI Team-Talk Slide Deck</a></span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/notebooks/PathwaysExplorer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pathways Visualization</span></a>
   </div>
@@ -200,7 +209,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#phase-1-30th-may---30th-jun" id="toc-phase-1-30th-may---30th-jun" class="nav-link active" data-scroll-target="#phase-1-30th-may---30th-jun"><span style="color:#18b85b"><u>Phase 1</u></span> <sup style="font-size:60%;">30<sup>th</sup> May - 30<sup>th</sup> Jun</sup></a></li>
+  <li><a href="#phase-2a-1st-jul---16th-jul" id="toc-phase-2a-1st-jul---16th-jul" class="nav-link" data-scroll-target="#phase-2a-1st-jul---16th-jul"><span style="color:#18b85b;"><u>Phase 2A</u></span><sup style="font-size:60%;color:black;"> <strong>1</strong><sup><strong>st</strong></sup> <strong>Jul - 16</strong><sup><strong>th</strong></sup> <strong>Jul</strong></sup></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -252,8 +268,45 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
+<p>The coding period leading up to the Midterm Evaluation has been an amazing experience for me. I’ve organized this report into two distinct parts, with each part dedicated to a specific phase of the project up to the Midterm Evaluation. <br></p>
+<section id="phase-1-30th-may---30th-jun" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-30th-may---30th-jun"><span style="color:#18b85b"><u>Phase 1</u></span> <sup style="font-size:60%;">30<sup>th</sup> May - 30<sup>th</sup> Jun</sup></h3>
+<ul>
+<li><p>Delved into relevant research papers, understood the intricacies of assembly runs, samples, studies and analyses, which form the foundational concepts of MGnify.</p></li>
+<li><p>Documented all visualizations present on the MGnify website which was extensively used in Phase 2.</p></li>
+<li><p>Significant chunk of Phase 1 was spent contributing and collaborating with <a href="https://www.ebi.ac.uk/people/person/alejandra-escobar-zepeda/"><strong>Alejandra Escobar</strong></a> (MGnify Bioinformatician) on the enhancement of her Jupyter notebook - <strong>Drawing presence/absence KOs for one metagenomic sample</strong>, specifically focusing on Pathways Visualization.</p></li>
+<li><p>The objective was to streamline the notebook, making it more concise, interactive, self-explanatory, and immediately usable. <br><br></p></li>
+<li><p><u><strong>Technologies Involved</strong></u> <strong>:</strong> <a href="https://www.r-project.org/">R</a> + <a href="https://www.docker.com/">Docker</a> + <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab</a> + <a href="https://quarto.org/">Quarto</a> + Packages like <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html">KEGGREST</a>, <a href="https://pathview.uncc.edu/overview#kegg_view">Pathview</a> <br><br></p></li>
+<li><p><u><strong>Pull Request</strong></u> <strong>:</strong></p>
+<ul>
+<li><p>Worked on an existing PR by Alejandra, <strong>Link :</strong> <strong><a href="https://github.com/EBI-Metagenomics/notebooks/pull/26" class="uri">https://github.com/EBI-Metagenomics/notebooks/pull/26</a></strong></p></li>
+<li><p><strong>Status :</strong> <span style="color:#dce157"><strong>Under Review</strong></span> 🟡</p></li>
+</ul></li>
+<li><p><u><strong>Code in Action</strong></u> <strong>:</strong></p>
+<ul>
+<li><p><a href="../../src/notebooks/PathwaysExplorer.html"><strong>Static Version of the Pathways Visualization Notebook I contributed to (hosted on this blog)</strong></a></p></li>
+<li><p><a href="../../posts/Viz_Recon/"><strong>Documentation of all Visualizations present in MGnify</strong></a></p></li>
+</ul></li>
+</ul>
+<p><br></p>
+<div style="text-align:center; color:#18b85b; font-size:30px">
+<p>: : : : : : : : : : : : : : : : : :</p>
+</div>
+<p><br></p>
+</section>
+<section id="phase-2a-1st-jul---16th-jul" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2a-1st-jul---16th-jul"><span style="color:#18b85b;"><u>Phase 2A</u></span><sup style="font-size:60%;color:black;"> <strong>1</strong><sup><strong>st</strong></sup> <strong>Jul - 16</strong><sup><strong>th</strong></sup> <strong>Jul</strong></sup></h3>
+<ul>
+<li><p>This phase focused on finding visualization solutions that could work seamlessly in both JavaScript and Python environments.</p></li>
+<li><p>Involved testing of packages like Plotly and <a href="https://www.highcharts.com/">Highcharts</a> were tested, with a preference for Highcharts due to its usage in the MGnify site.</p></li>
+<li><p>But then Highchart posed an issue as it couldn’t reference data as a link, impacting interoperability between React and Jupyter, especially with large datasets.</p></li>
+<li><p>Then came the idea of a common visualization grammar, enabling easy porting of visualizations to Jupyter notebooks for users to perform deeper visualization and push in custom data as well.</p></li>
+<li><p>Alternatives like <a href="https://github.com/StratoDem/pandas-js">pandas-js</a>, <a href="https://danfo.jsdata.org/">Danfo.js</a>, and <a href="https://vega.github.io/vega-lite/">Vega-Lite</a> were considered.</p></li>
+<li><p>In the end, the <a href="https://vega.github.io/vega/">Vega</a> ecosystem was selected due to its compatibility and ability to handle large datasets, ensuring seamless interoperability.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
